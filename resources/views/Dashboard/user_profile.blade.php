@@ -8,10 +8,6 @@
   <img src="https://img.freepik.com/free-photo/pleasant-looking-serious-man-stands-profile-has-confident-expression-wears-casual-white-t-shirt_273609-16959.jpg?size=626&ext=jpg" alt="John" height="250px" width="350px" >
   <h1>{{ Auth::user()->name }}</h1>
   <p class="title">Email : {{ Auth::user()->email }}</p>
-  <p class="title">Mobile number : {{ Auth::user()->phone }}</p>
-  <p>Membership Card</p>
-  <p class="title">Card number : {{ Auth::user()->account }}</p>
-  <p class="title">Card name : {{ Auth::user()->card_name }}</p>
   <a href="#"><i class="fa fa-dribbble"></i></a>
   <a href="#"><i class="fa fa-twitter"></i></a>
   <a href="#"><i class="fa fa-linkedin"></i></a>

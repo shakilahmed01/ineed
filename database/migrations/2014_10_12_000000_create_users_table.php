@@ -17,13 +17,6 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->string('phone')->nullable();
-            $table->string('card_name');
-            $table->string('card_quantity');
-            $table->string('card_ammount');
-            $table->string('account');
-            $table->string('discount');
-            $table->string('address');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

@@ -21,6 +21,31 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+//begin admindashboard
+Route::get('/admin/index',[App\http\controllers\DashboardController::class, 'index'])->name('index');
+Route::get('/add/user',[App\http\controllers\DashboardController::class, 'add_user_form'])->name('add_user_form');
+Route::get('v1/add/user',[App\http\controllers\DashboardController::class, 'add_user_formv1'])->name('add_user_formv1');
+Route::post('post/user',[App\http\controllers\DashboardController::class, 'post_user_information'])->name('post_user_information');
+
+//end admindashboard
+
+//add category area
+Route::post('/v1/dashboard/add/category/create',[App\Http\Controllers\CategoryController::class, 'cat_create'])->name('cat_create');
+Route::get('view/category',[App\Http\Controllers\CategoryController::class, 'view_category'])->name('view_category');
+Route::get('category/edit/{id}',[App\Http\Controllers\CategoryController::class, 'cat_edit'])->name('cat_edit');
+Route::post('category/update',[App\Http\Controllers\CategoryController::class, 'cat_update'])->name('cat_update');
+Route::get('category/delete/{id}',[App\Http\Controllers\CategoryController::class, 'cat_delete'])->name('cat_delete');
+//end add category area
+
+//add sub_category area
+Route::post('/v1/dashboard/add/sub/category/create',[App\Http\Controllers\CategoryController::class, 'sub_cat_create'])->name('sub_cat_create');
+Route::post('/get/subcategory',[App\Http\Controllers\DashboardController::class, 'get_subcategory']);
+Route::get('view/subcategory',[App\Http\Controllers\CategoryController::class, 'view_subcategory'])->name('view_subcategory');
+Route::get('subcategory/edit/{id}',[App\Http\Controllers\CategoryController::class, 'sub_edit'])->name('sub_edit');
+Route::post('subcategory/update',[App\Http\Controllers\CategoryController::class, 'sub_update'])->name('sub_update');
+Route::get('subcategory/delete/{id}',[App\Http\Controllers\CategoryController::class, 'sub_delete'])->name('sub_delete');
+//end sub_category area
+
 //begin userinformation
 Route::get('/user/profile',[App\http\controllers\DashboardController::class, 'profile'])->name('profile');
 Route::get('/user/view',[App\http\controllers\DashboardController::class, 'view_user'])->name('view_user');

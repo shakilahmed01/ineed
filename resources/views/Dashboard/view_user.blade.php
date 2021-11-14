@@ -9,11 +9,12 @@
       <th scope="col">Email</th>
       <th scope="col">Phone</th>
       <th scope="col">Card Name</th>
-      <th scope="col">Card Quantity</th>
+      <th scope="col">Card Number</th>
       <th scope="col">Card Amount</th>
       <th scope="col">Account</th>
-      <th scope="col">Discount</th>
       <th scope="col">address</th>
+      <th scope="col">Image</th>
+      <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
@@ -23,12 +24,12 @@
       <td>{{$list->name}}</td>
       <td>{{$list->email}}</td>
       <td>{{$list->phone}}</td>
-      <td>{{$list->card_name}}</td>
-      <td>{{$list->card_quantity }}</td>
+      <td>{{$list->relationBetweenCategory->category_name}}</td>
+      <td>{{$list->relationBetweenSubCategory->subcategory_card_number }}</td>
       <td>{{$list->card_ammount}}</td>
       <td>{{$list->account}}</td>
-      <td>{{$list->discount}}</td>
       <td>{{$list->address}}</td>
+      <td><img src="{{ asset('uploads/users') }}/{{ $list->photo }}" alt=""></td>
       <td>
         <a href="{{ url('/v1/dashboard/product/list') }}/{{ $list->id }}/{{ $list->slug }}" class=" btn-sm btn-primary">Edit</a>
           <a href="{{ url('/v1/dashboard/trash/vehicle') }}/{{ $list->id }}/{{ $list->slug }}" class=" btn-sm btn-danger">Delete</a>

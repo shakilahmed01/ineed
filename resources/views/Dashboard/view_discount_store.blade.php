@@ -25,6 +25,7 @@
       <td>{{$list->phone}}</td>
       <td>{{$list->price}}</td>
       <td>{{ Auth::user()->discount }}</td>
+      <td>{{$a}}</td>
       <td>{{$list->account}}</td>
       <td>
         <a href="{{ url('/v1/dashboard/product/list') }}/{{ $list->id }}/{{ $list->slug }}" class=" btn-sm btn-primary">Edit</a>
