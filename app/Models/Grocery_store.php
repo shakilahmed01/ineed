@@ -9,11 +9,10 @@ class Grocery_store extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'store_name',
-        'store_location',
-        'card_name',
-        'card_quantity',
-        'card_ammount',
-        'account',
+      'store_name',
+      'store_location',
+      'phone',
+      'price',
+      'photo',
     ];
 }

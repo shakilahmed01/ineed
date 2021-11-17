@@ -1,5 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.adminapp')
 @section('content')
+<body class="theme-blush">
+  <section class="content">
 <h1>category Details</h1>
 <table class="table">
   <thead>
@@ -20,10 +22,12 @@
 
       <td>
         <a href="{{ url('/category/edit') }}/{{ $list->id }}" class=" btn-sm btn-primary">Edit</a>
-          <a href="{{ url('/category/delete') }}/{{ $list->id }}" class=" btn-sm btn-danger">Delete</a>
+          
       </td>
     </tr>
 @endforeach
   </tbody>
 </table>
+</body>
+</section>
 @endsection

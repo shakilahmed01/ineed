@@ -15,12 +15,11 @@ class CreateGroceryStoresTable extends Migration
     {
         Schema::create('grocery_stores', function (Blueprint $table) {
             $table->id();
-            $table->string('store_name');
+            $table->string('store_name')->unique();
             $table->string('store_location');
-            $table->string('card_name');
-            $table->string('card_quantity');
-            $table->string('card_ammount');
-            $table->string('account');
+            $table->string('phone');
+            $table->string('price');
+            $table->string('photo');
             $table->timestamps();
         });
     }

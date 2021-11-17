@@ -1,7 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.adminapp')
 
 @section('content')
-<div class="container">
+<body class="theme-blush">
+<section class="container">
 
 
     <div class="row justify-content-center">
@@ -54,6 +55,6 @@
             </div>
         </div>
     </div>
-</div>
-
+</body>
+</section>
 @endsection

@@ -1,7 +1,7 @@
 <aside id="leftsidebar" class="sidebar">
     <div class="navbar-brand">
         <button class="btn-menu ls-toggle-btn" type="button"><i class="zmdi zmdi-menu"></i></button>
-        <a href="index.html"><img src="{{asset('Dashboard/assets/images/logo.svg')}}" width="25" alt="Aero"><span class="m-l-10">I NEED</span></a>
+        <a href="index.html"><img src="{{asset('Dashboard/assets/images/admin logo.png')}}" width="100" alt="Aero"><span class="m-l-10">Admin</span></a>
     </div>
     <div class="menu">
         <ul class="list">
@@ -26,7 +26,9 @@
             <li><a href="{{route('profile')}}"><i class="zmdi zmdi-account"></i><span>Admin Profile</span></a></li>
             <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-apps"></i><span>Registration Fo</span></a>
                 <ul class="ml-menu">
-                    <li><a href="{{route('add_user_formv1')}}">User Registration</a></li>
+                  <li><a href="{{route('add_user_formv1')}}">User Registration</a></li>
+                  <li><a href="{{route('discount_store')}}">Discount store Form</a></li>
+                    <li><a href="{{route('grocery_store')}}">Grocery store Form</a></li>
 
                 </ul>
             </li>
@@ -39,9 +41,11 @@
                     <li><a href="{{route('view_user')}}">User List</a></li>
                     <li><a href="{{route('view_category')}}">Category list</a></li>
                     <li><a href="{{route('view_subcategory')}}">Subcategory List</a></li>
+                    <li><a href="{{route('view_discount_store')}}">Discount Store</a></li>
+                    <li><a href="{{route('view_grocery')}}">Grocery Store</a></li>
                 </ul>
             </li>
-            <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-swap-alt"></i><span>Components</span></a>
+            <!-- <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-swap-alt"></i><span>Components</span></a>
                 <ul class="ml-menu">
                     <li><a href="ui_kit.html">Aero UI KIT</a></li>
                     <li><a href="alerts.html">Alerts</a></li>
@@ -134,7 +138,7 @@
                     <li><a href="jvectormap.html">jVectorMap</a></li>
                 </ul>
             </li>
-            <li>
+            <li> -->
                 <div class="progress-container progress-primary m-t-10">
                     <span class="progress-badge">Traffic this Month</span>
                     <div class="progress">

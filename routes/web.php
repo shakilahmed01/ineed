@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Auth::routes();
@@ -26,6 +26,9 @@ Route::get('/admin/index',[App\http\controllers\DashboardController::class, 'ind
 Route::get('/add/user',[App\http\controllers\DashboardController::class, 'add_user_form'])->name('add_user_form');
 Route::get('v1/add/user',[App\http\controllers\DashboardController::class, 'add_user_formv1'])->name('add_user_formv1');
 Route::post('post/user',[App\http\controllers\DashboardController::class, 'post_user_information'])->name('post_user_information');
+Route::get('user/edit/{id}',[App\Http\Controllers\DashboardController::class, 'user_edit'])->name('user_edit');
+Route::post('user/update',[App\Http\Controllers\DashboardController::class, 'user_update'])->name('user_update');
+Route::get('user/delete/{id}',[App\Http\Controllers\DashboardController::class, 'user_delete'])->name('user_delete');
 
 //end admindashboard
 
@@ -34,7 +37,6 @@ Route::post('/v1/dashboard/add/category/create',[App\Http\Controllers\CategoryCo
 Route::get('view/category',[App\Http\Controllers\CategoryController::class, 'view_category'])->name('view_category');
 Route::get('category/edit/{id}',[App\Http\Controllers\CategoryController::class, 'cat_edit'])->name('cat_edit');
 Route::post('category/update',[App\Http\Controllers\CategoryController::class, 'cat_update'])->name('cat_update');
-Route::get('category/delete/{id}',[App\Http\Controllers\CategoryController::class, 'cat_delete'])->name('cat_delete');
 //end add category area
 
 //add sub_category area
@@ -43,7 +45,6 @@ Route::post('/get/subcategory',[App\Http\Controllers\DashboardController::class,
 Route::get('view/subcategory',[App\Http\Controllers\CategoryController::class, 'view_subcategory'])->name('view_subcategory');
 Route::get('subcategory/edit/{id}',[App\Http\Controllers\CategoryController::class, 'sub_edit'])->name('sub_edit');
 Route::post('subcategory/update',[App\Http\Controllers\CategoryController::class, 'sub_update'])->name('sub_update');
-Route::get('subcategory/delete/{id}',[App\Http\Controllers\CategoryController::class, 'sub_delete'])->name('sub_delete');
 //end sub_category area
 
 //begin userinformation
@@ -68,7 +69,9 @@ Route::get('/grocery/view',[App\http\controllers\DashboardController::class, 'vi
 Route::get('/discount/store',[App\http\controllers\DashboardController::class, 'discount_store'])->name('discount_store');
 Route::post('/add/discount',[App\http\controllers\DashboardController::class, 'add_discount'])->name('add_discount');
 Route::get('/discount/view',[App\http\controllers\DashboardController::class, 'view_discount_store'])->name('view_discount_store');
-
+Route::get('discount/store/edit/{id}',[App\Http\Controllers\DashboardController::class, 'dis_edit'])->name('dis_edit');
+Route::post('discount/store/update',[App\Http\Controllers\DashboardController::class, 'dis_update'])->name('dis_update');
+Route::get('discount/store/delete/{id}',[App\Http\Controllers\DashboardController::class, 'dis_delete'])->name('dis_delete');
 //end Discount_store
 
 //begin ExistUser

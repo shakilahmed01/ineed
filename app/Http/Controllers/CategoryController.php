@@ -37,10 +37,7 @@ class CategoryController extends Controller
         ]);
         return back();
       }
-      function cat_delete($id){
-          $list=Category::findOrFail($id)->delete();
-          return back();
-        }
+
     // sub_cat_create
     function sub_cat_create(Request $request)
     {
@@ -68,10 +65,7 @@ class CategoryController extends Controller
         ]);
         return back();
       }
-      function sub_delete($id){
-          $list=Subcategory::findOrFail($id)->delete();
-          return back();
-        }
+    
 
     // get_subcategory
 

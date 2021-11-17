@@ -153,7 +153,7 @@
                                <div class="form-group form-float" >
                                          <select class="form-control show-tick ms select2"
                                              data-placeholder="Product Category" id="main_category_id"  name="card_name">
-                                            <option></option>
+                                            <option>Card Name</option>
                                             @foreach ($categories as $category)
                                             <option value="{{ $category->id }}">{{ $category->category_name }}</option>
                                             @endforeach
@@ -165,7 +165,7 @@
 
                                     <select class="form-control show-tick ms select2"
                                         data-placeholder="Product Subcategory" id="subcategory_id" name="card_number">
-                                        <option></option>
+                                        <option>Card Number</option>
                                         @foreach ($sub_categories as $subcategory)
                                 <option value="{{ $subcategory->id }}">{{ $subcategory->subcategory_card_number }}</option>
                                            @endforeach
@@ -209,16 +209,7 @@
                                <button class="btn btn-raised btn-primary waves-effect" type="submit">SUBMIT</button>
 
                            </form>
-<!-- SAMPLE AJAX -->
-                           <input type="text" id="x">
-                           <script>
-                              $(document).ready(function(){
-                                $("#x").change(function(){
-                                  alert("The text has been changed.");
-                                });
-                              });
-                              </script>
-   <!-- SAMPLE AJAX -->
+
                        </div>
                    </div>
                </div>

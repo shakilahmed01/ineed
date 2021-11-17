@@ -1,7 +1,8 @@
-@extends('layouts.app')
-
+@extends('layouts.adminapp')
 @section('content')
-<div class="container">
+<body class="theme-blush">
+  <section class="content">
+
 
 
     <div class="row justify-content-center">
@@ -18,7 +19,7 @@
                             <label for="subcategory_card_number" class="col-md-4 col-form-label text-md-right">{{ __('Card Number') }}</label>
 
                             <div class="col-md-6">
-                                <input id="subcategory_card_number" type="text" class="form-control @error('name') is-invalid @enderror" name="subcategory_card_number" value="{{ $list->category_name }}" required autocomplete="name" autofocus>
+                                <input id="subcategory_card_number" type="text" class="form-control @error('subcategory_card_number') is-invalid @enderror" name="subcategory_card_number" value="{{ $list->subcategory_card_number }}" required autocomplete="subcategory_card_number" autofocus>
 
                                 @error('subcategory_card_number')
                                     <span class="invalid-feedback" role="alert">
@@ -54,6 +55,7 @@
             </div>
         </div>
     </div>
-</div>
+  </body>
+</section>
 
 @endsection

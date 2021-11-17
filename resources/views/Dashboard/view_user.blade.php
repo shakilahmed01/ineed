@@ -1,5 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.adminapp')
 @section('content')
+<body class="theme-blush">
+  <section class="content">
 <h1>User Details</h1>
 <table class="table">
   <thead>
@@ -31,11 +33,13 @@
       <td>{{$list->address}}</td>
       <td><img src="{{ asset('uploads/users') }}/{{ $list->photo }}" alt=""></td>
       <td>
-        <a href="{{ url('/v1/dashboard/product/list') }}/{{ $list->id }}/{{ $list->slug }}" class=" btn-sm btn-primary">Edit</a>
-          <a href="{{ url('/v1/dashboard/trash/vehicle') }}/{{ $list->id }}/{{ $list->slug }}" class=" btn-sm btn-danger">Delete</a>
+        <a href="{{ url('/user/edit/') }}/{{ $list->id }}" class=" btn-sm btn-primary">Edit</a>
+          <a href="{{ url('/user/delete/') }}/{{ $list->id }}" class=" btn-sm btn-danger">Delete</a>
       </td>
     </tr>
 @endforeach
   </tbody>
 </table>
+</body>
+</section>
 @endsection

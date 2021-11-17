@@ -9,6 +9,10 @@ class Discount_store extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'store_name', 'store_location', 'phone', 'price',
+        'store_name',
+        'store_location',
+        'phone',
+        'price',
+        'photo',
     ];
 }
