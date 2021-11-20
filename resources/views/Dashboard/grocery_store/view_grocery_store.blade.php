@@ -28,8 +28,8 @@
       <img src="{{ asset('uploads/grocery_stores') }}/{{ $list->photo }}" alt="">
       </td>
       <td>
-        <a href="{{ url('/discount/store/edit') }}/{{ $list->id }}" class=" btn-sm btn-primary">Edit</a>
-          <a href="{{ url('/v1/dashboard/trash/vehicle') }}/{{ $list->id }}/{{ $list->slug }}" class=" btn-sm btn-danger">Delete</a>
+        <a href="{{ url('/grocery/store/edit') }}/{{ $list->id }}" class=" btn-sm btn-primary">Edit</a>
+          <a href="{{ url('grocery/store/delete/') }}/{{ $list->id }}" class=" btn-sm btn-danger">Delete</a>
       </td>
     </tr>
 @endforeach

@@ -75,17 +75,22 @@ class DashboardController extends Controller
           'card_ammount'=>$request->card_ammount,
           'account'=>$request->account,
           'address'=>$request->address,
-          'photo'=>$request->photo,
+
 
         ]);
+
+
         if ($request->hasFile('photo')) {
+
             $photo_upload     =  $request ->photo;
             $photo_extension  =  $photo_upload -> getClientOriginalExtension();
-            $photo_name       =  "i_need_store_". $user . "." . $photo_extension;
-            Image::make($photo_upload)->resize(250,350)->save(base_path('public/uploads/stores/'.$photo_name),100);
-            UserRegistration::find($user)->move([
+            $photo_name       =  "i_need_user_". $user . "." . $photo_extension;
+            Image::make($photo_upload)->resize(250,350)->save(base_path('public/uploads/users/'.$photo_name),100);
+            UserRegistration::find($user)->update([
             'photo'          => $photo_name,
                 ]);
+
+
               }
         return back();
       }
@@ -165,6 +170,37 @@ class DashboardController extends Controller
       $lists=Grocery_store::all();
       return view('Dashboard.grocery_store.view_grocery_store',compact('lists'));
     }
+    function grocery_edit($id){
+
+        $list=Grocery_store::findOrFail($id);
+        return view('Dashboard.grocery_store.single_grocery_store',compact('list'));
+      }
+      function grocery_update(Request $request){
+
+        $store=Grocery_store::findOrFail($request->id)->update([
+          'store_name'=>$request->store_name,
+          'store_location'=>$request->store_location,
+          'price'=>$request->price,
+          'phone'=>$request->phone,
+
+
+        ]);
+        if ($request->hasFile('photo')) {
+
+            $photo_upload     =  $request ->photo;
+            $photo_extension  =  $photo_upload -> getClientOriginalExtension();
+            $photo_name       =  "i_need_grocery_store_". $store . "." . $photo_extension;
+            Image::make($photo_upload)->resize(250,350)->save(base_path('public/uploads/grocery_stores/'.$photo_name),100);
+            Grocery_store::find($store)->update([
+            'photo'          => $photo_name,
+                ]);
+              }
+        return back();
+      }
+      function grocery_delete($id){
+          $list=Grocery_store::findOrFail($id)->delete();
+          return back();
+        }
 
     function discount_store(){
       return view('Dashboard.discount_store.discount');
@@ -210,16 +246,18 @@ class DashboardController extends Controller
         $store=Discount_store::findOrFail($request->id)->update([
           'store_name'=>$request->store_name,
           'store_location'=>$request->store_location,
+          'price'=>$request->price,
           'phone'=>$request->phone,
-          'photo'=>$request->photo,
+
 
         ]);
         if ($request->hasFile('photo')) {
+
             $photo_upload     =  $request ->photo;
             $photo_extension  =  $photo_upload -> getClientOriginalExtension();
             $photo_name       =  "i_need_store_". $store . "." . $photo_extension;
-            Image::make($photo_upload)->resize(452,510)->save(base_path('public/uploads/stores/'.$photo_name),100);
-            Discount_store::find($store)->move([
+            Image::make($photo_upload)->resize(250,350)->save(base_path('public/uploads/stores/'.$photo_name),100);
+            Discount_store::find($store)->update([
             'photo'          => $photo_name,
                 ]);
               }

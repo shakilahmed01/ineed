@@ -9,11 +9,11 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Discount Store Update') }}</div>
+                <div class="card-header">{{ __('Grocery Store Update') }}</div>
 
                 <div class="body">
 
-                <form  method="POST" action="{{route('dis_update')}}" enctype="multipart/form-data">
+                <form  method="POST" action="{{route('grocery_update')}}" enctype="multipart/form-data">
                      @csrf
 
                  <div class="form-group form-float">
@@ -40,7 +40,7 @@
                              </div>
                              <div class="body">
                                  <input type="file" class="dropify" name="photo"  >
-                                 <img src="{{ asset('uploads/stores') }}/{{ $list->photo }}" alt="">
+                                 <img src="{{ asset('uploads/grocery_stores') }}/{{ $list->photo }}" alt="">
                              </div>
                          </div>
                         </div>

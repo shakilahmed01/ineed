@@ -62,6 +62,9 @@ Route::post('/add/customer',[App\http\controllers\DashboardController::class, 'a
 Route::get('/grocery/store',[App\http\controllers\DashboardController::class, 'grocery_store'])->name('grocery_store');
 Route::post('/add/grocery',[App\http\controllers\DashboardController::class, 'add_grocery'])->name('add_grocery');
 Route::get('/grocery/view',[App\http\controllers\DashboardController::class, 'view_grocery'])->name('view_grocery');
+Route::get('grocery/store/edit/{id}',[App\Http\Controllers\DashboardController::class, 'grocery_edit'])->name('grocery_edit');
+Route::post('grocery/store/update',[App\Http\Controllers\DashboardController::class, 'grocery_update'])->name('grocery_update');
+Route::get('grocery/store/delete/{id}',[App\Http\Controllers\DashboardController::class, 'grocery_delete'])->name('grocery_delete');
 
 //end Grocery_store
 

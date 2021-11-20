@@ -1,21 +1,7 @@
 @extends('layouts.adminapp')
 @section('content')
-<html>
 <body class="theme-blush">
 
-<!-- Page Loader -->
-
-
-<!-- Right Icon menu Sidebar -->
-
-
-<!-- Left Sidebar -->
-
-
-<!-- Right Sidebar -->
-
-
-<!-- Main Content -->
 <section class="content">
     <div class="body_scroll">
         <div class="block-header">
@@ -23,7 +9,7 @@
                 <div class="col-lg-7 col-md-6 col-sm-12">
                     <h2>Admin Dashboard</h2>
                     <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i> Aero</a></li>
+                        <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i> I need</a></li>
                         <li class="breadcrumb-item">I NEED Admin Dashboard</li>
                         <li class="breadcrumb-item active">Dashboard</li>
                     </ul>
@@ -160,6 +146,4 @@
         </div>
     </div>
 </section>
-
 </body>
-</html>

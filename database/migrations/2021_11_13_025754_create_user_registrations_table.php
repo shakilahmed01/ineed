@@ -23,7 +23,7 @@ class CreateUserRegistrationsTable extends Migration
             $table->string('card_ammount');
             $table->string('account');
             $table->string('address');
-            $table->string('photo')->nullable();
+            $table->string('photo');
             $table->timestamps();
         });
     }

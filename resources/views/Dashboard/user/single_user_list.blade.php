@@ -28,12 +28,12 @@
 
 
                         <div class="form-group form-float" >
-                                  <input type="text" class="form-control" placeholder="User Name" name="card_name" value="{{$list->relationBetweenCategory->category_name}}" required>
+                                  <input type="text" class="form-control" placeholder="card Name" name="card_name" value="{{$list->card_name}}" required>
                          </div>
 
                          <div class="form-group form-float">
 
-                             <input type="text" class="form-control" placeholder="User Name" name="card_number" value="{{$list->relationBetweenSubCategory->subcategory_card_number }}" required>
+                             <input type="text" class="form-control" placeholder="Card number" name="card_number" value="{{$list->card_number }}" required>
                          </div>
 
 
@@ -57,7 +57,7 @@
                                  <h2>Feature Photo</h2>
                              </div>
                              <div class="body">
-                                 <input type="file" class="dropify" name="photo" >
+                                 <input type="file" class="dropify" name="photo"  >
                                  <img src="{{ asset('uploads/users') }}/{{ $list->photo }}" alt="">
                              </div>
                          </div>
