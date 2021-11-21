@@ -19,7 +19,7 @@ class CreateUserRegistrationsTable extends Migration
             $table->string('email')->unique();
             $table->string('phone')->nullable();
             $table->string('card_name');
-            $table->string('card_number');
+            $table->string('card_number')->unique();
             $table->string('card_ammount');
             $table->string('account');
             $table->string('address');

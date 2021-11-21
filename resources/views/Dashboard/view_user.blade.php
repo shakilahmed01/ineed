@@ -26,8 +26,8 @@
       <td>{{$list->name}}</td>
       <td>{{$list->email}}</td>
       <td>{{$list->phone}}</td>
-      <td>{{$list->card_name}}</td>
-      <td>{{$list->card_number }}</td>
+      <td>{{$list->relationBetweenCategory->category_name}}</td>
+      <td>{{$list->relationBetweenSubCategory->subcategory_card_number }}</td>
       <td>{{$list->card_ammount}}</td>
       <td>{{$list->account}}</td>
       <td>{{$list->address}}</td>

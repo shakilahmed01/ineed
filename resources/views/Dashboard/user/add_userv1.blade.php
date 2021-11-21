@@ -136,6 +136,23 @@
                            </ul>
                        </div>
                        <div class="body">
+                         @if ($message = Session::get('success'))
+                         <div class="alert alert-success alert-block">
+                             <button type="button" class="close" data-dismiss="alert">×</button>
+                                 <strong>{{ $message }}</strong>
+                         </div>
+                         @endif
+
+                         @if (count($errors) > 0)
+                             <div class="alert alert-danger">
+                                 <strong>Whoops!</strong> There were some problems with your input.
+                                 <ul>
+                                     @foreach ($errors->all() as $error)
+                                         <li>{{ $error }}</li>
+                                     @endforeach
+                                 </ul>
+                             </div>
+                         @endif
 
                        <form  method="POST" action="{{route('post_user_information')}}" enctype="multipart/form-data">
                             @csrf
@@ -163,13 +180,19 @@
 
                                 <div class="form-group form-float">
 
-                                    <select class="form-control show-tick ms select2"
+                                    <select class="form-control show-tick ms select2" type="input"
                                         data-placeholder="Product Subcategory" id="subcategory_id" name="card_number">
-                                        <option>Card Number</option>
+                                        <option >Card Number</option>
                                         @foreach ($sub_categories as $subcategory)
                                 <option value="{{ $subcategory->id }}">{{ $subcategory->subcategory_card_number }}</option>
                                            @endforeach
                                     </select>
+                                    <!-- <input class="form-control show-tick ms select2" id="subcategory_id" type="text" name="card_number" list="card_number">
+                                          <datalist >
+                                            @foreach ($sub_categories as $subcategory)
+                                            <option value="{{ $subcategory->id }}">{{ $subcategory->subcategory_card_number }}</option>
+                                                       @endforeach
+                                          </datalist> -->
                                 </div>
 
 
@@ -179,7 +202,7 @@
 
                                <div class="form-group form-float">
 
-                                   <input name="account" type="text" class="form-control" placeholder="Account">
+                                   <input name="account" type="text" class="form-control" placeholder="Account type">
                                </div>
 
                                 <div class="form-group form-float">

@@ -17,18 +17,22 @@
                      @csrf
 
                  <div class="form-group form-float">
-                   <input type="text" name="id" value="{{$list->id}}">
+                   <input type="hidden" name="id" value="{{$list->id}}">
+                   <label for="store_name">Store Name</label>
                             <input type="text" class="form-control"  name="store_name" value="{{$list->store_name}}" required>
                         </div>
                         <div class="form-group form-float">
+                          <label for="store_location">Store Location</label>
                             <input type="text" class="form-control"  name="store_location" value="{{$list->store_location}}" required>
                         </div>
                         <div class="form-group form-float">
+                          <label for="phone">Mobile Number</label>
                             <input type="text" class="form-control"  name="phone" value="{{$list->phone}}" required>
                         </div>
 
 
                         <div class="form-group form-float" >
+                          <label for="price">Price</label>
                                   <input type="text" class="form-control"  name="price" value="{{$list->price}}" required>
                          </div>
 

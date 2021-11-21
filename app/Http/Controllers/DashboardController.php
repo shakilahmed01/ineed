@@ -56,7 +56,7 @@ class DashboardController extends Controller
           'photo'          => $photo_name,
               ]);
             }
-      return back();
+      return back()->with('success','User have successfully registered.');
     }
 
     function user_edit($id){
@@ -164,7 +164,7 @@ class DashboardController extends Controller
           'photo'          => $photo_name,
               ]);
             }
-      return back();
+      return back()->with('success','Data have successfully Added.');
     }
     function view_grocery(){
       $lists=Grocery_store::all();
@@ -224,7 +224,7 @@ class DashboardController extends Controller
             'photo'          => $photo_name,
                 ]);
               }
-        return back();
+        return back()->with('success','Data have successfully Added.');
 
     }
 
