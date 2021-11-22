@@ -18,6 +18,74 @@
 
             </div>
         </div>
+        <div class="container-fluid">
+    <div class="row clearfix">
+        <div class="col-lg-3 col-md-6" >
+            <div class="card">
+                <div class="body xl-blue">
+                    <h4 class="mt-0 mb-0">2,048</h4>
+                    <p class="mb-0">Total sales</p>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="card">
+                <div class="body xl-blue">
+                    <h4 class="mt-0 mb-0">521</h4>
+                    <p class="mb-0 ">Total member</p>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="card">
+                <div class="body xl-blue">
+                    <h4 class="mt-0 mb-0">73</h4>
+                    <p class="mb-0 ">Total Discounts</p>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="card">
+                <div class="body xl-blue">
+                    <h4 class="mt-0 mb-0">15</h4>
+                    <p class="mb-0">Total deposit</p>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="card">
+                <div class="body xl-blue">
+                    <h4 class="mt-0 mb-0">15</h4>
+                    <p class="mb-0">Total Delivery</p>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="card">
+                <div class="body xl-blue">
+                    <h4 class="mt-0 mb-0">15</h4>
+                    <p class="mb-0">Total Due</p>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="card">
+                <div class="body xl-blue">
+                    <h4 class="mt-0 mb-0">15</h4>
+                    <p class="mb-0">Total Marchant Payments</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
               <div class="row clearfix">
                 <div class="col-lg-8 col-md-12">
                     <div class="card product-report">
@@ -64,7 +132,35 @@
                         </div>
                     </div>
                 </div>
-
+                <div class="col-xl-4 col-lg-5 col-md-12">
+                    <div class="card mcard_1">
+                        <div class="img">
+                            <img src="{{asset('Dashboard/assets/images/image-gallery/2.jpg')}}" class="img-fluid" alt="">
+                        </div>
+                        <div class="body">
+                            <div class="user">
+                                <img src="{{asset('Dashboard/assets/images/sm/avatar1.jpg')}}" class="rounded-circle img-raised" alt="profile-image">
+                                <h5 class="mt-3 mb-1">Partner Marchent Store</h5>
+                                <!-- <span>Designer, Developer, Traveler</span> -->
+                            </div>
+                            <button class="btn btn-primary">Total Sales</button>
+                            <div class="d-flex bd-highlight text-center mt-4">
+                                <div class="flex-fill bd-highlight">
+                                    <h5 class="mb-0">128</h5>
+                                    <small>Total Discounts</small>
+                                </div>
+                                <div class="flex-fill bd-highlight">
+                                    <h5 class="mb-0">1,528</h5>
+                                    <small>Total Profit</small>
+                                </div>
+                                <div class="flex-fill bd-highlight">
+                                    <h5 class="mb-0">321</h5>
+                                    <small>Following</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
             <div class="row clearfix">
                 <div class="col-sm-12 col-md-12 col-lg-12">
@@ -147,3 +243,4 @@
     </div>
 </section>
 </body>
+@endsection
