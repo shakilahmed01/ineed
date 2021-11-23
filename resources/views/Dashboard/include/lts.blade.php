@@ -3,7 +3,19 @@
         <button class="btn-menu ls-toggle-btn" type="button"><i class="zmdi zmdi-menu"></i></button>
         <a href="{{route('index')}}"><img src="{{asset('Dashboard/assets/images/admin logo.png')}}" width="100" alt="ineed"><span class="m-l-10">Admin</span></a>
     </div>
-    <div class="menu">
+    <style media="screen">
+      .menu{
+        background-color: #008acb;
+        color: #ffffff;
+      }
+      .menu span{
+        color: #ffffff;
+        font-size: 18px;
+        font-weight: bold;
+      }
+      
+    </style>
+    <div class="menu" >
         <ul class="list">
             <li>
                 <div class="user-info">
@@ -22,7 +34,7 @@
                     </form>
                 </div>
             </li>
-            <li><a href="{{route('add_user_formv1')}}"><i class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>
+            <li><a href="{{route('index')}}"><i class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>
             <li><a href="{{route('profile')}}"><i class="zmdi zmdi-account"></i><span>Admin Profile</span></a></li>
             <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-apps"></i><span>Registration Form</span></a>
                 <ul class="ml-menu">
@@ -37,7 +49,7 @@
 
             <li class="active open"><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-shopping-cart"></i><span>I need</span></a>
                 <ul class="ml-menu">
-                    <li class="active"><a href="{{route('index')}}">Dashboard</a></li>
+
                     <li><a href="{{route('view_user')}}">User List</a></li>
                     <li><a href="{{route('view_category')}}">Category list</a></li>
                     <li><a href="{{route('view_subcategory')}}">Subcategory List</a></li>
@@ -139,22 +151,22 @@
                 </ul>
             </li>
             <li> -->
-                <div class="progress-container progress-primary m-t-10">
+                <!-- <div class="progress-container progress-primary m-t-10">
                     <span class="progress-badge">Traffic this Month</span>
                     <div class="progress">
                         <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="67" aria-valuemin="0" aria-valuemax="100" style="width: 67%;">
                             <span class="progress-value">67%</span>
                         </div>
                     </div>
-                </div>
-                <div class="progress-container progress-info">
+                </div> -->
+                <!-- <div class="progress-container progress-info">
                     <span class="progress-badge">Server Load</span>
                     <div class="progress">
                         <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="86" aria-valuemin="0" aria-valuemax="100" style="width: 86%;">
                             <span class="progress-value">86%</span>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </li>
         </ul>
     </div>

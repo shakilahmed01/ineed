@@ -16,10 +16,24 @@ use Carbon\Carbon;
 use Image;
 class DashboardController extends Controller
 {
-    //
+    //custom login view
+    function register_view(){
+      return view('Dashboard.admin.admin_register');
+    }
+    function login_view(){
+      return view('Dashboard.admin.admin_login');
+    }
+
+    //End custom login view
+
+
     function index(){
       return view('Dashboard.admin_dashboard');
     }
+  
+
+
+
 //begin UserRegistration
     function add_user_form(){
       $categories = Category::all();
@@ -51,7 +65,7 @@ class DashboardController extends Controller
           $photo_upload     =  $request ->photo;
           $photo_extension  =  $photo_upload -> getClientOriginalExtension();
           $photo_name       =  "i_need_user_". $user . "." . $photo_extension;
-          Image::make($photo_upload)->resize(250,350)->save(base_path('public/uploads/users/'.$photo_name),100);
+          Image::make($photo_upload)->resize(100,100)->save(base_path('public/uploads/users/'.$photo_name),100);
           UserRegistration::find($user)->update([
           'photo'          => $photo_name,
               ]);
@@ -159,7 +173,7 @@ class DashboardController extends Controller
           $photo_upload     =  $request ->photo;
           $photo_extension  =  $photo_upload -> getClientOriginalExtension();
           $photo_name       =  "i_need_grocery_store_". $store . "." . $photo_extension;
-          Image::make($photo_upload)->resize(250,350)->save(base_path('public/uploads/grocery_stores/'.$photo_name),100);
+          Image::make($photo_upload)->resize(100,100)->save(base_path('public/uploads/grocery_stores/'.$photo_name),100);
           Grocery_store::find($store)->update([
           'photo'          => $photo_name,
               ]);
@@ -219,7 +233,7 @@ class DashboardController extends Controller
             $photo_upload     =  $request ->photo;
             $photo_extension  =  $photo_upload -> getClientOriginalExtension();
             $photo_name       =  "i_need_store_". $store . "." . $photo_extension;
-            Image::make($photo_upload)->resize(250,350)->save(base_path('public/uploads/stores/'.$photo_name),100);
+            Image::make($photo_upload)->resize(100,100)->save(base_path('public/uploads/stores/'.$photo_name),100);
             Discount_store::find($store)->update([
             'photo'          => $photo_name,
                 ]);

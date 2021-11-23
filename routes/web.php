@@ -14,8 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('auth.login');
+    return view('Dashboard.admin.admin_login');
 });
+Route::get('/admin/register', [App\Http\Controllers\DashboardController::class, 'register_view'])->name('register_view');
+Route::get('/admin/login', [App\Http\Controllers\DashboardController::class, 'login_view'])->name('login_view');
 
 Auth::routes();
 

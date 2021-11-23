@@ -24,7 +24,7 @@
                 {{-- Add Category --}}
                 <!-- Button trigger modal -->
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
-                    Add Category
+                    Add Card Name
                     </button>
 
                     <!-- Modal -->
@@ -67,7 +67,7 @@
 
                 <!-- Button trigger modal -->
 <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
-  Add Subcategory
+  Add Card Number
 </button>
 
 <!-- Modal -->
