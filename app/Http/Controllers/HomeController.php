@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\UserRegistration;
+use App\Models\Category;
+use App\Models\Grocery_store;
+use App\Models\Discount_store;
 class HomeController extends Controller
 {
     /**
@@ -23,6 +26,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('Dashboard.admin_dashboard');
+        return view('home');
     }
 }

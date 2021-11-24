@@ -84,3 +84,20 @@ Route::get('/exist/user',[App\http\controllers\DashboardController::class, 'exis
 Route::post('/add/user',[App\http\controllers\DashboardController::class, 'add_user'])->name('add_user');
 
 //end ExistUser
+
+//begin payments
+Route::get('/user/payments',[App\http\controllers\DashboardController::class, 'payments'])->name('payments');
+Route::post('/add/user/payments',[App\http\controllers\DashboardController::class, 'add_payments'])->name('add_payments');
+Route::get('/payment/view',[App\http\controllers\DashboardController::class, 'view_payments'])->name('view_payments');
+Route::post('payments/update',[App\Http\Controllers\DashboardController::class, 'payment_update'])->name('payment_update');
+Route::get('payments/edit/{id}',[App\Http\Controllers\DashboardController::class, 'payment_edit'])->name('payment_edit');
+Route::get('payments/delete/{id}',[App\Http\Controllers\DashboardController::class, 'payment_delete'])->name('payment_delete');
+
+//end payments
+
+
+//begin Frontend
+Route::get('/user/index',[App\http\controllers\FrontendController::class, 'user_index'])->name('user_index');
+Route::get('/user/home',[App\http\controllers\FrontendController::class, 'user_home'])->name('user_home');
+
+//end frontend

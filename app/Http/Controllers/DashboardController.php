@@ -12,6 +12,7 @@ use App\Models\Subcategory;
 use App\Models\ExistUser;
 use App\Models\Discount_store;
 use App\Models\Grocery_store;
+use App\Models\Payments;
 use Carbon\Carbon;
 use Image;
 class DashboardController extends Controller
@@ -27,10 +28,14 @@ class DashboardController extends Controller
     //End custom login view
 
 
-    function index(){
-      return view('Dashboard.admin_dashboard');
+  public function index(){
+    $users=UserRegistration::all()->count();
+    $discount=Category::all()->count();
+    $grocery_store=Grocery_store::all()->count();
+    $discount_store=Discount_store::all()->count();
+      return view('Dashboard.admin_dashboard',compact('users','discount','grocery_store','discount_store'));
     }
-  
+
 
 
 
@@ -297,4 +302,60 @@ class DashboardController extends Controller
       return back();
     }
 
+
+//begin payments
+     function payments(){
+       $categories = Category::all();
+       $sub_categories = Subcategory::all();
+       return view('Dashboard.payments.payments_form',compact('categories','sub_categories'));
+     }
+
+     function add_payments(Request $request){
+       $payment=Payments::insertGetId([
+         'user_name'=>$request->user_name,
+         'card_name'=>$request->card_name,
+         'card_number'=>$request->card_number,
+         'store_name'=>$request->store_name,
+         'store_location'=>$request->store_location,
+         'phone'=>$request->phone,
+         'price'=>$request->price,
+         'created_at'   =>Carbon::now()
+       ]);
+       return back();
+     }
+
+
+     function view_payments(){
+       $lists=Payments::all();
+       return view('Dashboard.payments.view_payments_form',compact('lists'));
+     }
+
+     function payment_update(Request $request){
+
+       $payment=Payments::findOrFail($request->id)->update([
+         'user_name'=>$request->user_name,
+         'card_name'=>$request->card_name,
+         'card_number'=>$request->card_number,
+         'store_name'=>$request->store_name,
+         'store_location'=>$request->store_location,
+         'price'=>$request->price,
+         'phone'=>$request->phone,
+
+
+       ]);
+
+       return back();
+     }
+
+     function payment_edit($id){
+
+         $list=Payments::findOrFail($id);
+         return view('Dashboard.payments.single_payments_form',compact('list'));
+       }
+
+       function payment_delete($id){
+           $list=Payments::findOrFail($id)->delete();
+           return back();
+         }
+//end payments
 }

@@ -13,7 +13,7 @@
         font-size: 18px;
         font-weight: bold;
       }
-      
+
     </style>
     <div class="menu" >
         <ul class="list">
@@ -40,7 +40,9 @@
                 <ul class="ml-menu">
                   <li><a href="{{route('add_user_formv1')}}">User Registration Form</a></li>
                   <li><a href="{{route('discount_store')}}">Discount store Form</a></li>
-                    <li><a href="{{route('grocery_store')}}">Grocery store Form</a></li>
+                  <li><a href="{{route('grocery_store')}}">Grocery store Form</a></li>
+                  <li><a href="{{route('grocery_store')}}">Offers Form</a></li>
+                  <li><a href="{{route('payments')}}">Payments Form</a></li>
 
                 </ul>
             </li>
@@ -55,6 +57,7 @@
                     <li><a href="{{route('view_subcategory')}}">Subcategory List</a></li>
                     <li><a href="{{route('view_discount_store')}}">Discount Store List</a></li>
                     <li><a href="{{route('view_grocery')}}">Grocery Store List</a></li>
+                    <li><a href="{{route('view_payments')}}">payments List</a></li>
                 </ul>
             </li>
             <!-- <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-swap-alt"></i><span>Components</span></a>

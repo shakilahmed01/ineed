@@ -23,8 +23,8 @@
         <div class="col-lg-3 col-md-6" >
             <div class="card">
                 <div class="body xl-blue">
-                    <h4 class="mt-0 mb-0">2,048</h4>
-                    <p class="mb-0">Total sales</p>
+                    <h4 class="mt-0 mb-0">{{$grocery_store}}</h4>
+                    <p class="mb-0">Total Grocery Store</p>
 
                 </div>
             </div>
@@ -32,7 +32,7 @@
         <div class="col-lg-3 col-md-6">
             <div class="card">
                 <div class="body xl-blue">
-                    <h4 class="mt-0 mb-0">521</h4>
+                    <h4 class="mt-0 mb-0"> {{ $users}} </h4>
                     <p class="mb-0 ">Total member</p>
 
                 </div>
@@ -41,7 +41,7 @@
         <div class="col-lg-3 col-md-6">
             <div class="card">
                 <div class="body xl-blue">
-                    <h4 class="mt-0 mb-0">73</h4>
+                    <h4 class="mt-0 mb-0">{{$discount}}</h4>
                     <p class="mb-0 ">Total Discounts</p>
 
                 </div>
@@ -59,8 +59,8 @@
         <div class="col-lg-3 col-md-6">
             <div class="card">
                 <div class="body xl-blue">
-                    <h4 class="mt-0 mb-0">15</h4>
-                    <p class="mb-0">Total Delivery</p>
+                    <h4 class="mt-0 mb-0">{{$discount_store}}</h4>
+                    <p class="mb-0">Total Discount Store</p>
 
                 </div>
             </div>
