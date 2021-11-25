@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grocery Summary</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <!-- favicon size 64x64 not good -->
+    <link rel="icon" type="image/png" href="{{asset('Dashboard/assets_kayes/media/iNeedfavicon.ico')}}" /> 
+
+    <!-- Bootstrap Font Icon CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+    />
+    <!-- Custom CSS for footer -->
+    <link rel="stylesheet" href="{{asset('Dashboard/assets_kayes/css/styles.css')}}" />
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script> -->
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+    <script>
+      $(".mydatatable").DataTable();
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <style>
+    select.custom-select .custom-select-sm .form-control .form-control-sm {
+      padding-right: 17%;
+    }
+  </style>
+  <body>
+    <header>
+      <!-- needed -->
+      <div class="container">
+        <header
+          class="
+            d-flex
+            flex-wrap
+            align-items-center
+            justify-content-center justify-content-lg-between
+            py-3
+            mb-4
+            border-bottom
+          "
+          style="background: rgb(255, 255, 255)"
+        >
+          <a
+            href="#"
+            class="
+              d-flex
+              align-items-center
+              col-md-3
+              mb-2 mb-md-0
+              text-dark text-decoration-none
+            "
+          >
+            <img
+              src="{{asset('Dashboard/assets_kayes/media/logo_v3_withoutSlogan.png')}}"
+              class="img-fluid"
+              alt="Responsive image"
+              style="max-width: 60%"
+            />
+          </a>
+
+          <!-- <ul class=""> -->
+          <div
+            class="
+              cardinfo
+              justify-content-center
+              col-12 col-md-auto
+              mb-2 mb-md-0
+            "
+          >
+            <div class="card-name">
+              <h1>Sliver Card</h1>
+            </div>
+            <div class="card-number">
+              <h4>Card-Number : 0000111122223333</h4>
+              <!-- <div class=" ">
+                <p  class="text-justify" >Card-Number : 1111111111111111</p>
+              </div> -->
+            </div>
+            <div class="card-amount">
+              <h4>Card Amount : 10000.00BDT</h4>
+            </div>
+          </div>
+          <!-- </ul>   -->
+
+          <div class="dropdown text-end">
+            <a
+              href="#"
+              class="d-block link-dark text-decoration-none dropdown-toggle"
+              id="dropdownUser1"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img
+                src="https://github.com/mdo.png"
+                alt="mdo"
+                width="32"
+                height="32"
+                class="rounded-circle"
+              />
+            </a>
+            <ul
+              class="dropdown-menu text-small"
+              aria-labelledby="dropdownUser1"
+            >
+              <!-- <li><a class="dropdown-item" href="#">New project...</a></li> -->
+              <li>
+                <a class="dropdown-item" href="#">
+                  Notifications <i class="bi bi-bell"></i>
+                </a>
+              </li>
+              <li><a class="dropdown-item" href="#">Profile</a></li>
+              <li><hr class="dropdown-divider" /></li>
+              <li><a class="dropdown-item" href="#">Sign out</a></li>
+            </ul>
+          </div>
+        </header>
+      </div>
+      <style>
+        .custom-badge {
+            display: inline-block;
+            padding: 0.35em  0.65em ;
+            font-size: 0.75em;
+            font-weight: 700;
+            line-height: 1;
+            color: #fff;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: baseline;
+            border-radius: 0.25 rem;
+            width: 150 px !important;
+            height: 29 px !important;
+            padding: 8 px 1 px 1 px 1 px !important;
+        }
+      </style>
+
+      <!-- needed -->
+    </header>
+    <div class="container mb-3 mt-3">
+      <table class="table table-bordered mydatatable"  style="width: 100%;  background: linear-gradient(to right, #c6ece5, #acb6e5);"  >
+        <thead>
+          <tr>
+            <th>Month</th>
+            <th>Date</th>
+            <th>Shop</th>
+            <th>Ammount</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>January</th>
+            <th>01/01/2021</th>
+            <th>মেসার্স সৈয়দ স্টোর</th>
+            <th>833.00</th>
+            <th>
+              <span class="badge badge-primary">Processing</span>
+                </div>
+            </th>
+          </tr>
+          <tr>
+            <th>February</th>
+            <th>01/02/2021</th>
+            <th>নিউ নয়নতারা পুষ্প বিতান</th>
+            <th>833.00</th>
+            <th>
+              <span class="badge badge-dark">Shipped</span>
+                </div>
+            </th>
+          </tr>
+          <tr>
+            <th>March</th>
+            <th>01/03/2021</th>
+            <th>শেফা হামদর্দ এন্ড ইউনানী দাওয়াখানা</th>
+            <th>833.00</th>
+            <th>
+              <span class="badge badge-success">Delivered</span>
+                </div>
+            </th>
+          </tr>
+          <tr>
+            <th>April</th>
+            <th>01/04/2021</th>
+            <th>মোহনলাল মিষ্টান্ন ভান্ডার</th>
+            <th>833.00</th>
+            <th>
+              <span class="badge badge-primary">Processing</span>
+                </div>
+            </th>
+          </tr>
+          <tr>
+            <th>April</th>
+            <th>01/04/2021</th>
+            <th>বাচ্চু মোরগপোলাও এন্ড তেহেরী ঘর</th>
+            <th>833.00</th>
+            <th>
+              <span class="badge badge-dark">Shipped</span>
+                </div>
+            </th>
+          </tr>
+          <tr>
+            <th>May</th>
+            <th>01/05/2021</th>
+            <th>হাজি নূরউদ্দিন কাবলি স্টোর</th>
+            <th>833.00</th>
+            <th>
+              <span class="badge badge-success">Delivered</span>
+                </div>
+            </th>
+          </tr>
+          <tr>
+            <th>June</th>
+            <th>01/06/2021</th>
+            <th>মডার্ন কাবাব সেন্টার</th>
+            <th>833.00</th>
+            <th>
+              <span class="badge badge-primary">Processing</span>
+                </div>
+            </th>
+          </tr>
+          <tr>
+            <th>July</th>
+            <th>01/07/2021</th>
+            <th>পান্নালাল মার্বেল হাউজ</th>
+            <th>833.00</th>
+            <th>
+              <span class="badge badge-dark">Shipped</span>
+                </div>
+            </th>
+          </tr>
+          <tr>
+            <th>August</th>
+            <th>01/08/2021</th>
+            <th>আলমগীর বিউটি এন্ড কসমেটিক্স ষ্টোর</th>
+            <th>833.00</th>
+            <th>
+              <span class="badge badge-success">Delivered</span>
+                </div>
+            </th>
+          </tr>
+          <tr>
+            <th>September</th>
+            <th>01/09/2021</th>
+            <th>পান্নালাল মার্বেল হাউজ</th>
+            <th>833.00</th>
+            <th>
+              <span class="badge badge-primary">Processing</span>
+                </div>
+            </th>
+          </tr>
+          <tr>
+            <th>October</th>
+            <th>01/10/2021</th>
+            <th>হেলাল ক্যাটারিং সার্ভিস</th>
+            <th>833.00</th>
+            <th>
+              <span class="badge badge-dark">Shipped</span>
+                </div>
+            </th>
+          </tr>
+          <tr>
+            <th>November</th>
+            <th>01/11/2021</th>
+            <th>অশোক ক্রোকারিজ</th>
+            <th>833.00</th>
+            <th>
+              <span class="badge badge-success">Delivered</span>
+                </div>
+            </th>
+          </tr>
+          <tr>
+            <th>December</th>
+            <th>01/12/2021</th>
+            <th>ঘোষ এন্ড সন্স</th>
+            <th>833.00</th>
+            <th>
+              <span class="badge badge-primary">Processing</span>
+                </div>
+            </th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- Footer-->
+    <link rel="stylesheet" href="{{asset('Dashboard/assets_kayes/css/styles.css')}}"/>
+    <style>
+      footer a {
+        color: rgba(255, 255, 255, 0.5);
+        text-decoration: none;
+      }
+      footer a:hover,
+      footer a:active,
+      footer a:focus {
+        color: rgba(255, 255, 255, 0.75);
+        text-decoration: underline;
+      }
+    </style>
+
+    <!-- Footer-->
+
+    <footer class="bg-black text-center py-5">
+      <div class="container px-5">
+        <div class="text-white-50 small">
+          <div class="mb-2">&copy; Developed by CODETREE DEVELOPERS. All Rights Reserved.</div>
+          <a href="#!">Privacy</a>
+          <span class="mx-1">&middot;</span>
+          <a href="#!">Terms</a>
+          <span class="mx-1">&middot;</span>
+          <a href="#!">FAQ</a>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>

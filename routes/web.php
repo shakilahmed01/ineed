@@ -99,5 +99,19 @@ Route::get('payments/delete/{id}',[App\Http\Controllers\DashboardController::cla
 //begin Frontend
 Route::get('/user/index',[App\http\controllers\FrontendController::class, 'user_index'])->name('user_index');
 Route::get('/user/home',[App\http\controllers\FrontendController::class, 'user_home'])->name('user_home');
+Route::get('/grocery/store',[App\http\controllers\FrontendController::class, 'grocery_store'])->name('grocery_store');
+Route::get('/company/profile',[App\http\controllers\FrontendController::class, 'company_profile'])->name('company_profile');
+Route::get('/customer/profile',[App\http\controllers\FrontendController::class, 'customer_profile'])->name('customer_profile');
+Route::get('/grocery/summary',[App\http\controllers\FrontendController::class, 'grocery_summary'])->name('grocery_summary');
+Route::get('/discount/table',[App\http\controllers\FrontendController::class, 'discount_table'])->name('discount_table');
 
 //end frontend
+
+
+//begin become merchant
+Route::post('/add/merchant',[App\http\controllers\DashboardController::class, 'become_merchant'])->name('become_merchant');
+Route::get('/become_merchant/view',[App\http\controllers\DashboardController::class, 'view_become_merchant'])->name('view_become_merchant');
+Route::get('become_merchant/delete/{id}',[App\Http\Controllers\DashboardController::class, 'become_merchant_delete'])->name('become_merchant_delete');
+
+
+//end become merchant

@@ -58,9 +58,10 @@
                     <li><a href="{{route('view_discount_store')}}">Discount Store List</a></li>
                     <li><a href="{{route('view_grocery')}}">Grocery Store List</a></li>
                     <li><a href="{{route('view_payments')}}">payments List</a></li>
+                    <li><a href="{{route('view_become_merchant')}}">Become a Merchant List</a></li>
                 </ul>
             </li>
-            <!-- <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-swap-alt"></i><span>Components</span></a>
+            <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-swap-alt"></i><span>Components</span></a>
                 <ul class="ml-menu">
                     <li><a href="ui_kit.html">Aero UI KIT</a></li>
                     <li><a href="alerts.html">Alerts</a></li>
@@ -154,22 +155,22 @@
                 </ul>
             </li>
             <li> -->
-                <!-- <div class="progress-container progress-primary m-t-10">
+                <div class="progress-container progress-primary m-t-10">
                     <span class="progress-badge">Traffic this Month</span>
                     <div class="progress">
                         <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="67" aria-valuemin="0" aria-valuemax="100" style="width: 67%;">
                             <span class="progress-value">67%</span>
                         </div>
                     </div>
-                </div> -->
-                <!-- <div class="progress-container progress-info">
+                </div>
+                <div class="progress-container progress-info">
                     <span class="progress-badge">Server Load</span>
                     <div class="progress">
                         <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="86" aria-valuemin="0" aria-valuemax="100" style="width: 86%;">
                             <span class="progress-value">86%</span>
                         </div>
                     </div>
-                </div> -->
+                </div>
             </li>
         </ul>
     </div>

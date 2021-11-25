@@ -13,10 +13,17 @@ use App\Models\ExistUser;
 use App\Models\Discount_store;
 use App\Models\Grocery_store;
 use App\Models\Payments;
+use App\Models\Become_merchant;
 use Carbon\Carbon;
 use Image;
 class DashboardController extends Controller
 {
+
+    public function __construct(){
+      $this->middleware('auth');
+      $this->middleware('role');
+    }
+
     //custom login view
     function register_view(){
       return view('Dashboard.admin.admin_register');
@@ -358,4 +365,37 @@ class DashboardController extends Controller
            return back();
          }
 //end payments
+
+//begin become merchant
+        function become_merchant(Request $request){
+          $request->validate([
+
+           'name'          =>'required',
+           'email'         =>'required',
+           'subject'      =>'required',
+           'message'      =>'required',
+
+         ]);
+
+          $merchant=Become_merchant::insertGetId([
+            'name'=>$request->name,
+            'email'=>$request->email,
+            'subject'=>$request->subject,
+            'message'=>$request->message,
+            'created_at'   =>Carbon::now()
+          ]);
+          return back()->with('success','Data have successfully Added. We will contact you soon!');
+        }
+
+
+        function view_become_merchant(){
+          $lists=Become_merchant::all();
+          return view('Dashboard.become_merchant.become_merchant_list',compact('lists'));
+        }
+
+        function become_merchant_delete($id){
+            $list=Become_merchant::findOrFail($id)->delete();
+            return back();
+          }
+//end become merchant
 }

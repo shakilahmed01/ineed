@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -563,7 +564,25 @@
       </div>
 
       <div class="col-lg-6">
-        <form action="#" method="post" class="php-email-form">
+        @if ($message = Session::get('success'))
+        <div class="alert alert-success alert-block">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+                <strong>{{ $message }}</strong>
+        </div>
+        @endif
+
+        @if (count($errors) > 0)
+            <div class="alert alert-danger">
+                <strong>Whoops!</strong> There were some problems with your input.
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+        <form action="{{route('become_merchant')}}" method="post" class="php-email-form">
+          @csrf
           <div class="row gy-4">
 
             <div class="col-md-6">
@@ -614,7 +633,7 @@
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
-    <script src="{{asset('Dashboard/assets_kayes/js/scripts.js')}}"></script>
+    <script src="{{asset('Dashboard/js/scripts.js')}}"></script>
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 
   <!-- Template Main JS File -->
