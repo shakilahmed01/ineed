@@ -157,7 +157,17 @@
                        <form  method="POST" action="{{route('post_user_information')}}" enctype="multipart/form-data">
                             @csrf
                         <div class="form-group form-float">
-                                   <input type="text" class="form-control" placeholder="User Name" name="name" required>
+                                   
+                                   <div class="form-group form-float" >
+                                             <select class="form-control show-tick ms select2"
+                                                 data-placeholder="User Name"   name="name">
+                                                <option>User Name</option>
+                                                @foreach ($users as $user)
+                                                <option value="{{ $user->id }}">{{ $user->name }}</option>
+                                                @endforeach
+
+                                            </select>
+                                    </div>
                                </div>
                                <div class="form-group form-float">
                                    <input type="text" class="form-control" placeholder="Email" name="email" required>

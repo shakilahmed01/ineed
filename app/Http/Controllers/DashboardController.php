@@ -24,16 +24,6 @@ class DashboardController extends Controller
       $this->middleware('role');
     }
 
-    //custom login view
-    function register_view(){
-      return view('Dashboard.admin.admin_register');
-    }
-    function login_view(){
-      return view('Dashboard.admin.admin_login');
-    }
-
-    //End custom login view
-
 
   public function index(){
     $users=UserRegistration::all()->count();
@@ -50,13 +40,15 @@ class DashboardController extends Controller
     function add_user_form(){
       $categories = Category::all();
       $sub_categories = Subcategory::all();
-      return view('Dashboard.user.add_user',compact('categories','sub_categories'));
+      $users = User::all();
+      return view('Dashboard.user.add_user',compact('categories','sub_categories','users'));
       }
 
       function add_user_formv1(){
         $categories = Category::all();
         $sub_categories = Subcategory::all();
-        return view('Dashboard.user.add_userv1',compact('categories','sub_categories'));
+        $users = User::all();
+        return view('Dashboard.user.add_userv1',compact('categories','sub_categories','users'));
         }
 
     function post_user_information(Request $request){

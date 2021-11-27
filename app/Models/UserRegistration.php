@@ -20,13 +20,19 @@ class UserRegistration extends Model
         'photo',
 
     ];
-function relationBetweenCategory()
-{
+    function relationBetweenUser()
+    {
 
-return $this->hasOne('App\Models\Category','id','card_name');
-}
-function relationBetweenSubCategory()
-{
-return $this->hasOne('App\Models\SubCategory','id','card_number');
-}
+    return $this->hasOne('App\Models\User','id','name');
+    }
+    
+    function relationBetweenCategory()
+    {
+
+    return $this->hasOne('App\Models\Category','id','card_name');
+    }
+    function relationBetweenSubCategory()
+    {
+    return $this->hasOne('App\Models\SubCategory','id','card_number');
+    }
 }

@@ -16,7 +16,7 @@ class CreateUserRegistrationsTable extends Migration
         Schema::create('user_registrations', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email')->unique();
+            $table->string('email');
             $table->string('phone')->nullable();
             $table->string('card_name');
             $table->string('card_number')->unique();

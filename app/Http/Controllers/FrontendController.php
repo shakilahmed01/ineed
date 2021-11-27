@@ -3,17 +3,33 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\UserRegistration;
+use App\Models\Category;
+use Auth;
 class FrontendController extends Controller
 {
-  
+
     //
+
+    //custom login view
+    function register_view(){
+      return view('Dashboard.admin.admin_register');
+    }
+    function login_view(){
+      return view('Dashboard.admin.admin_login');
+    }
+
+    //End custom login view
     function user_index(){
       return view('Dashboard.frontend.index');
     }
 
     function user_home(){
-      return view('Dashboard.frontend.customer_home');
+
+      $cards=UserRegistration::where('name', Auth::user()->id)->get();
+      // $cards=UserRegistration::all();
+      $category=Category::all();
+      return view('Dashboard.frontend.customer_home',compact('cards','category'));
     }
 
     function grocery_store(){
@@ -29,7 +45,9 @@ class FrontendController extends Controller
     }
 
     function grocery_summary(){
-      return view('Dashboard.frontend.grocery_summary');
+      $cards=UserRegistration::where('name', Auth::user()->id)->get();
+      $category=Category::all();
+      return view('Dashboard.frontend.grocery_summary',compact('cards','category'));
     }
 
     function discount_table(){

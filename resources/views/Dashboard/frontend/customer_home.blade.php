@@ -81,7 +81,9 @@
     <table class="table table-striped table-bordered table-hover mydatatable" style="width: 100%;" id="">
         <thead>
             <tr>
-                <th>Memberhip Card</th>
+              <th>Name</th>
+              <th>Memberhip Card</th>
+                <th> Card number</th>
                 <th>Percentage (%)</th>
                 <th>Card Amount</th>
             </tr>
@@ -89,29 +91,19 @@
 
         <tbody>
             <a href="#">
+              @foreach($cards as $card)
                 <tr data-href="https://www.google.com/">
                    <a href="#">
-                    <td>asd</td>
-                    <td>5%</td>
-                    <td> 10000</td>
+                     <td>{{Auth::user()->name}}</td>
+
+                    <td>{{$card->relationBetweenCategory->category_name}}</td>
+                    <td>{{$card->relationBetweenSubCategory->subcategory_card_number}}</td>
+                    <td>{{$card->relationBetweenCategory->category_discount}}</td>
+                    <td>{{$card->card_ammount}}</td>
                    </a>
                 </tr>
+                @endforeach
             </a>
-            <tr>
-              <td>Bronze</td>
-              <td>5%</td>
-              <td> 20000</td>
-            </tr>
-            <tr>
-                <td>Silver</td>
-                <td>25%</td>
-                <td> 40000</td>
-            </tr>
-            <tr>
-                <td>Gold</td>
-                <td>50%</td>
-                <td> 80000</td>
-            </tr>
         </tbody>
     </table>
 </div>

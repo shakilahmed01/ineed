@@ -22,7 +22,7 @@
     />
 
     <!-- favicon size 64x64 not good -->
-    <link rel="icon" type="image/png" href="{{asset('Dashboard/assets_kayes/media/iNeedfavicon.ico')}}" /> 
+    <link rel="icon" type="image/png" href="{{asset('Dashboard/assets_kayes/media/iNeedfavicon.ico')}}" />
 
     <!-- Bootstrap Font Icon CSS -->
     <link
@@ -98,16 +98,19 @@
             "
           >
             <div class="card-name">
-              <h1>Sliver Card</h1>
+              @foreach($cards as $card)
+                <h1>Card Name : {{$card->relationBetweenCategory->category_name}}</h1>
+                @endforeach
             </div>
             <div class="card-number">
-              <h4>Card-Number : 0000111122223333</h4>
-              <!-- <div class=" ">
-                <p  class="text-justify" >Card-Number : 1111111111111111</p>
-              </div> -->
+            @foreach($cards as $card)
+              <h4>Card Number : {{$card->relationBetweenSubCategory->subcategory_card_number}}</h4>
+              @endforeach
             </div>
             <div class="card-amount">
-              <h4>Card Amount : 10000.00BDT</h4>
+              @foreach($cards as $card)
+                <h4>Card Amount : {{$card->card_ammount}}</h4>
+                @endforeach
             </div>
           </div>
           <!-- </ul>   -->
@@ -140,7 +143,15 @@
               </li>
               <li><a class="dropdown-item" href="#">Profile</a></li>
               <li><hr class="dropdown-divider" /></li>
-              <li><a class="dropdown-item" href="#">Sign out</a></li>
+              <li><a class="dropdown-item" href="{{ route('logout') }}"
+                 onclick="event.preventDefault();
+                               document.getElementById('logout-form').submit();">
+                  {{ __('Logout') }}
+              </a>
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                  @csrf
+              </form>
+              </li>
             </ul>
           </div>
         </header>

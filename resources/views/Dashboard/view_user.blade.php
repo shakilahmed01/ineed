@@ -23,7 +23,7 @@
     @foreach($lists as $list)
     <tr>
       <th scope="row">{{$list->id}}</th>
-      <td>{{$list->name}}</td>
+      <td>{{$list->relationBetweenUser->name}}</td>
       <td>{{$list->email}}</td>
       <td>{{$list->phone}}</td>
       <td>{{$list->relationBetweenCategory->category_name}}</td>
