@@ -61,7 +61,7 @@ Route::post('/add/customer',[App\http\controllers\DashboardController::class, 'a
 //end customer
 
 //begin Grocery_store
-Route::get('/grocery/store',[App\http\controllers\DashboardController::class, 'grocery_store'])->name('grocery_store');
+Route::get('/grocery/store/form',[App\http\controllers\DashboardController::class, 'grocery_store'])->name('grocery_store_form');
 Route::post('/add/grocery',[App\http\controllers\DashboardController::class, 'add_grocery'])->name('add_grocery');
 Route::get('/grocery/view',[App\http\controllers\DashboardController::class, 'view_grocery'])->name('view_grocery');
 Route::get('grocery/store/edit/{id}',[App\Http\Controllers\DashboardController::class, 'grocery_edit'])->name('grocery_edit');
@@ -104,7 +104,7 @@ Route::get('/company/profile',[App\http\controllers\FrontendController::class, '
 Route::get('/customer/profile',[App\http\controllers\FrontendController::class, 'customer_profile'])->name('customer_profile');
 Route::get('/grocery/summary',[App\http\controllers\FrontendController::class, 'grocery_summary'])->name('grocery_summary');
 Route::get('/discount/table',[App\http\controllers\FrontendController::class, 'discount_table'])->name('discount_table');
-
+Route::get('/grocery/search',[App\Http\Controllers\FrontendController::class, 'grocery_search'])->name('grocery_search');
 //end frontend
 
 
@@ -112,6 +112,15 @@ Route::get('/discount/table',[App\http\controllers\FrontendController::class, 'd
 Route::post('/add/merchant',[App\http\controllers\DashboardController::class, 'become_merchant'])->name('become_merchant');
 Route::get('/become_merchant/view',[App\http\controllers\DashboardController::class, 'view_become_merchant'])->name('view_become_merchant');
 Route::get('become_merchant/delete/{id}',[App\Http\Controllers\DashboardController::class, 'become_merchant_delete'])->name('become_merchant_delete');
-
-
 //end become merchant
+
+
+//begin offer
+Route::get('/offer/form',[App\http\controllers\DashboardController::class, 'offer_form'])->name('offer_form');
+Route::get('/view/offer',[App\http\controllers\DashboardController::class, 'view_offer_list'])->name('view_offer_list');
+Route::post('/add/offer',[App\http\controllers\DashboardController::class, 'add_offer'])->name('add_offer');
+Route::get('/offer/edit/{id}',[App\Http\Controllers\DashboardController::class, 'offer_edit'])->name('offer_edit');
+Route::post('/offer/update',[App\Http\Controllers\DashboardController::class, 'offer_update'])->name('offer_update');
+Route::get('/offer/delete/{id}',[App\Http\Controllers\DashboardController::class, 'offer_delete'])->name('offer_delete');
+
+//end offer

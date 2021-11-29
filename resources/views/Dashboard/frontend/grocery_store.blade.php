@@ -96,16 +96,19 @@ small, .small {
 <!-- header section end -->
 <div class="container py-3" id="cardContainer">
   <div class="row mb-2">
-    <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-      <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+    <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" method="get" action="{{route('grocery_search')}}">
+      <input type="search" class="form-control" value="" name="store_name" placeholder="Search..." aria-label="Search">
     </form>
   </div>
     <div class="row">
+      @foreach($grocery as $store)
       <div class="col-12 col-sm-8 col-md-6 col-lg-4 col-height" >
+
         <div class="card">
           <style>
             .card-img{
               width:"fit-content";
+              height: 40%;
             }
             .col-height{
               height:30rem;
@@ -128,16 +131,17 @@ small, .small {
               font-size:1rem;
             }
           </style>
-           <img class="card-img" src="{{asset('Dashboard/assets_kayes/media/5.jpg')}}" alt="Bologna" >
+
+           <img class="card-img" src="{{ asset('uploads/grocery_stores') }}/{{ $store->photo }}" alt="Bologna">
           <div class="card-img-overlay text-white d-flex flex-column justify-content-center">
             <h4 class="card-title custom-font">
-              নিউ নয়নতারা পুষ্প বিতান
+              Store Name: {{$store->store_name}}
             </h4>
             <h6 class="card-subtitle mb-2">
-              ঠিকানা : কৃষি মার্কেট ,মোহাম্মদপুর
+              Address: {{$store->store_location}}
             </h6>
             <p class="card-text">
-              মোবাইল : 01234567890
+              Mobile: {{$store->phone}}
              </p>
             <!-- <div class="link d-flex">
               <a href="#" class="card-link text-warning">Read More</a>
@@ -146,6 +150,7 @@ small, .small {
           </div>
         </div>
       </div>
+      @endforeach
       <style>
         @import url('https://fonts.googleapis.com/css2?family=Galada&display=swap');
         @import url('https://fonts.maateen.me/solaiman-lipi/font.css');

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\UserRegistration;
 use App\Models\Category;
+use App\Models\Grocery_store;
+use App\Models\Discount_store;
 use Auth;
 class FrontendController extends Controller
 {
@@ -31,9 +33,29 @@ class FrontendController extends Controller
       $category=Category::all();
       return view('Dashboard.frontend.customer_home',compact('cards','category'));
     }
+//grocery details search
+      public function grocery_search(Request $request){
+      // Get the search value from the request
+           $store_name = $request->input('store_name');
+
+
+
+          // Search in the title and body columns from the posts table
+          $p = Grocery_store::query()
+               ->where('store_name', 'LIKE', "%{$store_name}%")
+
+
+              ->get();
+
+
+          // Return the search view with the resluts compacted
+
+          return view('Dashboard.frontend.grocery_store_search', compact('p'));
+      }
 
     function grocery_store(){
-      return view('Dashboard.frontend.grocery_store');
+      $grocery=Grocery_store::all();
+      return view('Dashboard.frontend.grocery_store',compact('grocery'));
     }
 
     function customer_profile(){
@@ -51,7 +73,8 @@ class FrontendController extends Controller
     }
 
     function discount_table(){
-      return view('Dashboard.frontend.discount_table');
+      $store=Discount_store::all();
+      return view('Dashboard.frontend.discount_table',compact('store'));
     }
 
 }

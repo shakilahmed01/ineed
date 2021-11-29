@@ -11,7 +11,7 @@ class Offers extends Model
     protected $fillable = [
       'store_name',
       'store_location',
-      'card_name',
-      'price',
+      'discount',
+      'photo',
     ];
 }

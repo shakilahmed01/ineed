@@ -13,6 +13,7 @@ use App\Models\ExistUser;
 use App\Models\Discount_store;
 use App\Models\Grocery_store;
 use App\Models\Payments;
+use App\Models\Offers;
 use App\Models\Become_merchant;
 use Carbon\Carbon;
 use Image;
@@ -390,4 +391,79 @@ class DashboardController extends Controller
             return back();
           }
 //end become merchant
+
+
+//begin offer
+        function offer_form(){
+          return view('Dashboard.offers.offer_form');
+        }
+
+        function add_offer(Request $request){
+          $request->validate([
+
+           'store_name'          =>'required',
+           'store_location'         =>'required',
+           'discount'      =>'required',
+           'photo'      =>'required',
+
+         ]);
+
+          $offers=Offers::insertGetId([
+            'store_name'=>$request->store_name,
+            'store_location'=>$request->store_location,
+            'discount'=>$request->discount,
+            'photo'=>$request->photo,
+            'created_at'   =>Carbon::now()
+          ]);
+
+          if ($request->hasFile('photo')) {
+              $photo_upload     =  $request ->photo;
+              $photo_extension  =  $photo_upload -> getClientOriginalExtension();
+              $photo_name       =  "i_need_offer_". $offers . "." . $photo_extension;
+              Image::make($photo_upload)->resize(100,100)->save(base_path('public/uploads/offers/'.$photo_name),100);
+              Offers::find($offers)->update([
+              'photo'          => $photo_name,
+                  ]);
+                }
+          return back()->with('success','Data have successfully Added.');
+        }
+
+        function view_offer_list(){
+          $lists=Offers::all();
+          return view('Dashboard.offers.view_offer_list',compact('lists'));
+        }
+
+        function offer_edit($id){
+
+            $list=Offers::findOrFail($id);
+            return view('Dashboard.offers.single_offer_list',compact('list'));
+          }
+
+        function offer_update(Request $request){
+
+          $offers=Offers::findOrFail($request->id)->update([
+            'store_name'=>$request->store_name,
+            'store_location'=>$request->store_location,
+            'discount'=>$request->discount,
+
+          ]);
+          if ($request->hasFile('photo')) {
+
+              $photo_upload     =  $request ->photo;
+              $photo_extension  =  $photo_upload -> getClientOriginalExtension();
+              $photo_name       =  "i_need_offer_". $offers . "." . $photo_extension;
+              Image::make($photo_upload)->resize(250,350)->save(base_path('public/uploads/offers/'.$photo_name),100);
+              Offers::find($offers)->update([
+              'photo'          => $photo_name,
+                  ]);
+                }
+
+          return back();
+        }
+
+        function offer_delete($id){
+            $list=Offers::findOrFail($id)->delete();
+            return back();
+          }
+//end offer
 }

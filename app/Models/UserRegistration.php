@@ -25,7 +25,7 @@ class UserRegistration extends Model
 
     return $this->hasOne('App\Models\User','id','name');
     }
-    
+
     function relationBetweenCategory()
     {
 
@@ -33,6 +33,6 @@ class UserRegistration extends Model
     }
     function relationBetweenSubCategory()
     {
-    return $this->hasOne('App\Models\SubCategory','id','card_number');
+    return $this->hasOne('App\Models\Subcategory','id','card_number');
     }
 }

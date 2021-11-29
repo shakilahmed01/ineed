@@ -136,47 +136,22 @@ hr {
                                     padding: 1%  1% 1% 1%;
                                 }
                             </style>
-                            <span class="badge bg-danger float-right" id="price-badge"> -10% </span>
+                          
+                            @foreach($store as $dis)
+                              <span class="badge bg-danger float-right" id="price-badge"> -10% </span>
                             <h2>
-                                সৈয়দ হোটেল এন্ড রেস্টুরেন্ট
+                                {{$dis->store_name}}
                             </h2>
                             <h4>
-                                হাউজ 23,রোড 16, সেক্টর 12
-                                উত্তরা, ঢাকা -1230
+                                Address: {{$dis->store_location}}
                             </h4>
                             <p>
-                                মোবাইল-01234567890
+                                Mobile: {{$dis->phone}}
                             </p>
+                            <hr>
+                            @endforeach
                         </div>
-                        <hr>
-                        <div>
-                            <span class="badge bg-danger" id="price-badge"> -10% </span>
-                            <h2>
-                                সৈয়দ হোটেল এন্ড রেস্টুরেন্ট
-                            </h2>
-                            <h4>
-                                হাউজ 23,রোড 16, সেক্টর 12
-                                উত্তরা, ঢাকা -1230
-                            </h4>
-                            <p>
-                                মোবাইল-01234567890
-                            </p>
-                        </div>
-                        <hr>
-                        <div>
-                            <span class="badge bg-danger" id="price-badge"> -10% </span>
-                            <h2>
-                                সৈয়দ হোটেল এন্ড রেস্টুরেন্ট
-                            </h2>
-                            <h4>
-                                হাউজ 23,রোড 16, সেক্টর 12
-                                উত্তরা, ঢাকা -1230
-                            </h4>
-                            <p>
-                                মোবাইল-01234567890
-                            </p>
-                        </div>
-                        <hr>
+
                     </div>
                     <div class="tab-pane fade " id="discountStoreSummary">
                         <div class="w-25 p-3" style="background-color: #eee;">

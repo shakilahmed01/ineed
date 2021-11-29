@@ -17,8 +17,9 @@ class CreateOffersTable extends Migration
             $table->id();
             $table->string('store_name');
             $table->string('store_location');
-            $table->string('card_name');
-            $table->string('price');
+            $table->string('discount');
+            $table->string('photo');
+
             $table->timestamps();
         });
     }
