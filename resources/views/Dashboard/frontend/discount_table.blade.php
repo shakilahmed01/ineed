@@ -136,7 +136,7 @@ hr {
                                     padding: 1%  1% 1% 1%;
                                 }
                             </style>
-                          
+
                             @foreach($store as $dis)
                               <span class="badge bg-danger float-right" id="price-badge"> -10% </span>
                             <h2>

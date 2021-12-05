@@ -188,26 +188,36 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th>January</th>
-            <th>01/01/2021</th>
-            <th>মেসার্স সৈয়দ স্টোর</th>
-            <th>833.00</th>
+          <!-- <tr>
+            @foreach($payments as $payment)
+            <th>{{$payment->created_at}}</th>
+            @endforeach
+            @foreach($payments as $payment)
+            <th>{{$payment->created_at}}</th>
+            @endforeach
+            @foreach($payments as $payment)
+            <th>{{$payment->store_name}}</th>
+            @endforeach
+            @foreach($payments as $payment)
+            <th>{{$payment->price}}</th>
+            @endforeach
             <th>
               <span class="badge badge-primary">Processing</span>
                 </div>
             </th>
-          </tr>
+          </tr> -->
+          @foreach($payments as $payment)
           <tr>
-            <th>February</th>
-            <th>01/02/2021</th>
-            <th>নিউ নয়নতারা পুষ্প বিতান</th>
-            <th>833.00</th>
+            <th>{{$payment->created_at}}</th>
+            <th>{{$payment->created_at}}</th>
+            <th>{{$payment->store_name}}</th>
+            <th>{{$payment->price}}</th>
             <th>
               <span class="badge badge-dark">Shipped</span>
                 </div>
             </th>
           </tr>
+          @endforeach
           <tr>
             <th>March</th>
             <th>01/03/2021</th>

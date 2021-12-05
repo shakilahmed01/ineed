@@ -1,7 +1,7 @@
 <aside id="leftsidebar" class="sidebar">
     <div class="navbar-brand">
         <button class="btn-menu ls-toggle-btn" type="button"><i class="zmdi zmdi-menu"></i></button>
-        <a href="{{route('index')}}"><img src="{{asset('Dashboard/assets/images/admin logo.png')}}" width="100" alt="ineed"><span class="m-l-10">Admin</span></a>
+        <a href="{{route('admin_index')}}"><img src="{{asset('Dashboard/assets/images/admin logo.png')}}" width="100" alt="ineed"><span class="m-l-10">Admin</span></a>
     </div>
     <style media="screen">
       .menu{
@@ -34,7 +34,7 @@
                     </form>
                 </div>
             </li>
-            <li><a href="{{route('index')}}"><i class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>
+            <li><a href="{{route('admin_index')}}"><i class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>
             <li><a href="{{route('profile')}}"><i class="zmdi zmdi-account"></i><span>Admin Profile</span></a></li>
             <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-apps"></i><span>Registration Form</span></a>
                 <ul class="ml-menu">
@@ -53,8 +53,8 @@
                 <ul class="ml-menu">
 
                     <li><a href="{{route('view_user')}}">User List</a></li>
-                    <li><a href="{{route('view_category')}}">Category list</a></li>
-                    <li><a href="{{route('view_subcategory')}}">Subcategory List</a></li>
+                    <li><a href="{{route('view_category')}}">Card Name list</a></li>
+                    <li><a href="{{route('view_subcategory')}}">Card Number List</a></li>
                     <li><a href="{{route('view_discount_store')}}">Discount Store List</a></li>
                     <li><a href="{{route('view_grocery')}}">Grocery Store List</a></li>
                     <li><a href="{{route('view_payments')}}">payments List</a></li>

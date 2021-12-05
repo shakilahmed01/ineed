@@ -30,10 +30,13 @@ class HomeController extends Controller
     {
          // return view('home');
         if(Auth::user()->role_id == 2){
-          return redirect('/user/home');
+          return redirect()->route('user_home');
+        }
+        elseif(Auth::user()->role_id == 3){
+          return redirect()->route('merchant_form');
         }
         else{
-          return redirect('/admin/index');
+          return redirect()->route('admin_index');
         }
     }
 }

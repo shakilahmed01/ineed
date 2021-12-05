@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-
+use Auth;
 class MerchantRole
 {
     /**
@@ -18,7 +18,7 @@ class MerchantRole
     {
       if(Auth::user()->role_id == 3)
       {
-        return redirect('/user/index');
+        return redirect('/merchant/form');
       }
         return $next($request);
     }

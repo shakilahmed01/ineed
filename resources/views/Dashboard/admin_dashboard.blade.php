@@ -9,7 +9,7 @@
                 <div class="col-lg-7 col-md-6 col-sm-12">
                     <h2>Admin Dashboard</h2>
                     <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{{route('index')}}"><i class="zmdi zmdi-home"></i> I need</a></li>
+                        <li class="breadcrumb-item"><a href="{{route('admin_index')}}"><i class="zmdi zmdi-home"></i> I need</a></li>
                         <li class="breadcrumb-item">I NEED Admin Dashboard</li>
                         <li class="breadcrumb-item active">Dashboard</li>
                     </ul>

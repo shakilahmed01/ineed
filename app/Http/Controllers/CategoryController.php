@@ -10,6 +10,9 @@ use Carbon\Carbon;
 
 class CategoryController extends Controller
 {
+
+
+  }
     // create
     function cat_create(Request $request)
     {
@@ -65,7 +68,7 @@ class CategoryController extends Controller
         ]);
         return back();
       }
-    
+
 
     // get_subcategory
 

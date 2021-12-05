@@ -9,7 +9,7 @@ class Payments extends Model
 {
     use HasFactory;
     protected $fillable = [
-      'user_name',
+      'name',
       'card_name',
       'card_number',
       'store_name',
@@ -18,6 +18,12 @@ class Payments extends Model
       'price',
 
     ];
+
+    function relationBetweenUser()
+    {
+
+    return $this->hasOne('App\Models\User','id','name');
+    }
 
     function relationBetweenCategory()
     {

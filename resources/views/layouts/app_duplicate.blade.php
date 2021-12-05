@@ -23,7 +23,7 @@
 </head>
 <body>
   @include('Dashboard.include.preloader')
-  @include('Dashboard.include.lts')
+  
 
         <main class="py-4">
             @yield('content')

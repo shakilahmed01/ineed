@@ -23,6 +23,7 @@ class DashboardController extends Controller
     public function __construct(){
       $this->middleware('auth');
       $this->middleware('role');
+
     }
 
 
@@ -312,7 +313,7 @@ class DashboardController extends Controller
 
      function add_payments(Request $request){
        $payment=Payments::insertGetId([
-         'user_name'=>$request->user_name,
+         'name'=>$request->name,
          'card_name'=>$request->card_name,
          'card_number'=>$request->card_number,
          'store_name'=>$request->store_name,
@@ -333,7 +334,7 @@ class DashboardController extends Controller
      function payment_update(Request $request){
 
        $payment=Payments::findOrFail($request->id)->update([
-         'user_name'=>$request->user_name,
+         'name'=>$request->name,
          'card_name'=>$request->card_name,
          'card_number'=>$request->card_number,
          'store_name'=>$request->store_name,

@@ -7,7 +7,10 @@ use App\Models\UserRegistration;
 use App\Models\Category;
 use App\Models\Grocery_store;
 use App\Models\Discount_store;
+use App\Models\Offers;
+use App\Models\Payments;
 use Auth;
+use Carbon\Carbon;
 class FrontendController extends Controller
 {
 
@@ -23,6 +26,7 @@ class FrontendController extends Controller
 
     //End custom login view
     function user_index(){
+
       return view('Dashboard.frontend.index');
     }
 
@@ -31,7 +35,8 @@ class FrontendController extends Controller
       $cards=UserRegistration::where('name', Auth::user()->id)->get();
       // $cards=UserRegistration::all();
       $category=Category::all();
-      return view('Dashboard.frontend.customer_home',compact('cards','category'));
+      $offer=Offers::all()->count();
+      return view('Dashboard.frontend.customer_home',compact('cards','category','offer'));
     }
 //grocery details search
       public function grocery_search(Request $request){
@@ -68,13 +73,25 @@ class FrontendController extends Controller
 
     function grocery_summary(){
       $cards=UserRegistration::where('name', Auth::user()->id)->get();
+      $payments=Payments::where('name', Auth::user()->id)->get();
       $category=Category::all();
-      return view('Dashboard.frontend.grocery_summary',compact('cards','category'));
+      return view('Dashboard.frontend.grocery_summary',compact('cards','category','payments'));
     }
 
     function discount_table(){
       $store=Discount_store::all();
       return view('Dashboard.frontend.discount_table',compact('store'));
+    }
+
+    function notification_view(){
+      $offers=Offers::all();
+      $offer=Offers::all()->count();
+      return view('Dashboard.frontend.notification_view',compact('offers','offer'));
+    }
+
+    function qrcode_view(){
+      $offers=Offers::all();
+      return view('qr_code',compact('offers'));
     }
 
 }

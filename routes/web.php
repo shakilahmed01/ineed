@@ -24,7 +24,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //begin admindashboard
-Route::get('/admin/index',[App\http\controllers\DashboardController::class, 'index'])->name('index');
+Route::get('/admin/index',[App\http\controllers\DashboardController::class, 'index'])->name('admin_index');
 Route::get('/add/user',[App\http\controllers\DashboardController::class, 'add_user_form'])->name('add_user_form');
 Route::get('v1/add/user',[App\http\controllers\DashboardController::class, 'add_user_formv1'])->name('add_user_formv1');
 Route::post('post/user',[App\http\controllers\DashboardController::class, 'post_user_information'])->name('post_user_information');
@@ -85,6 +85,11 @@ Route::post('/add/user',[App\http\controllers\DashboardController::class, 'add_u
 
 //end ExistUser
 
+//begin Merchant
+Route::get('/merchant/form',[App\http\controllers\MerchantController::class, 'merchant_form'])->name('merchant_form');
+
+//end Merchant
+
 //begin payments
 Route::get('/user/payments',[App\http\controllers\DashboardController::class, 'payments'])->name('payments');
 Route::post('/add/user/payments',[App\http\controllers\DashboardController::class, 'add_payments'])->name('add_payments');
@@ -105,6 +110,7 @@ Route::get('/customer/profile',[App\http\controllers\FrontendController::class, 
 Route::get('/grocery/summary',[App\http\controllers\FrontendController::class, 'grocery_summary'])->name('grocery_summary');
 Route::get('/discount/table',[App\http\controllers\FrontendController::class, 'discount_table'])->name('discount_table');
 Route::get('/grocery/search',[App\Http\Controllers\FrontendController::class, 'grocery_search'])->name('grocery_search');
+Route::get('/notification/view',[App\Http\Controllers\FrontendController::class, 'notification_view'])->name('notification_view');
 //end frontend
 
 
@@ -124,3 +130,11 @@ Route::post('/offer/update',[App\Http\Controllers\DashboardController::class, 'o
 Route::get('/offer/delete/{id}',[App\Http\Controllers\DashboardController::class, 'offer_delete'])->name('offer_delete');
 
 //end offer
+
+//Qr code generator
+// Route::get('qr_code/generator', function(){
+//   return view('qr_code');
+// });
+Route::get('qr_code/generator',[App\http\controllers\FrontendController::class, 'qrcode_view'])->name('qrcode_view');
+
+//end Qr Code generator

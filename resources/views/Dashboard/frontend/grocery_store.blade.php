@@ -65,34 +65,7 @@ small, .small {
 
 </style>
   <!-- header section -->
-  <header class="p-3 mb-3 border-bottom">
-    <div class="container">
-      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        <a href="#" class="col-3 d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-          <img src="{{asset('Dashboard/assets_kayes/media/logo_v3_withoutSlogan.png')}}" id="logo" alt="" style="width: 80%;">
-        </a>
-        <a href="#" class="nav-link px-2 nav-text" style="text-decoration: none; color: black;"> User Name: Osman Sikdar</a>
-
-
-        <div class="dropdown text-end" style="margin: 0% 0% 0% 40%;">
-          <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
-          </a>
-          <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
-          <li>
-               <a class="dropdown-item" href="#">
-              Notifications <i class="bi bi-bell"></i>
-              <span class="badge badge-light">4</span>
-            </a>
-          </li>
-            <li><a class="dropdown-item" href="{{route('customer_profile')}}">Profile</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Sign out</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </header>
+  @include('Dashboard.frontend.include.header')
 <!-- header section end -->
 <div class="container py-3" id="cardContainer">
   <div class="row mb-2">
