@@ -33,14 +33,18 @@
 </head>
 <style>
   /* Become a merchant button style start */
+  .shadow-sm{
+    box-shadow: 0 0px 24px -1px grey !important;
+    height: 80px;
+  }
   .merchant-btn-hover {
-                  width: 30%;
+                  width: 26%;
                   font-size: 16px;
                   font-weight: 400;
                   color: #fff;
                   cursor: pointer;
                   margin: 20px;
-                  height: 55px;
+                  height: 48px;
                   text-align:center;
                   border: none;
                   background-size: 300% 100%;
@@ -174,64 +178,12 @@
                   font-weight: bold;
                 }
 
-    /* .custom-button-color:hover{
-            color: rgb(255, 255, 255);
-            background-color: #0088ce;
-            border-color: #0088ce;
-            transition: 0.5s;
-            transition-timing-function: ease-in-out;
-        }  */
-    /* .custom-button-color:hover {
-            color: #fff;
-            background-color: #232fcc;
-            border-color: #212cc0;
-        } */
 
-    /* .custom-button-glow {
-            -webkit-border-radius: 10px;
-            border-radius: 10px;
-            border: none;
-            color: #FFFFFF;
-            cursor: pointer;
-            display: inline-block;
-            font-family: Arial;
-            font-size: 20px;
-            padding: 5px 10px;
-            text-align: center;
-            text-decoration: none;
-            -webkit-animation: glowing 1500ms infinite;
-            -moz-animation: glowing 1500ms infinite;
-            -o-animation: glowing 1500ms infinite;
-            animation: glowing 1500ms infinite;
-            }
-@-webkit-keyframes glowing {
-  0% { background-color: #0088ce; -webkit-box-shadow: 0 0 3px #0088ce; }
-  50% { background-color: #56c8f5; -webkit-box-shadow: 0 0 40px #56c8f5; }
-  100% { background-color: #0088ce; -webkit-box-shadow: 0 0 3px #0088ce; }
-}
-
-@-moz-keyframes glowing {
-  0% { background-color: #0088ce; -moz-box-shadow: 0 0 3px #0088ce; }
-  50% { background-color: #56c8f5; -moz-box-shadow: 0 0 40px #56c8f5; }
-  100% { background-color: #0088ce; -moz-box-shadow: 0 0 3px #0088ce; }
-}
-
-@-o-keyframes glowing {
-  0% { background-color: #0088ce; box-shadow: 0 0 3px #0088ce; }
-  50% { background-color: #56c8f5; box-shadow: 0 0 40px #56c8f5; }
-  100% { background-color: #0088ce; box-shadow: 0 0 3px #0088ce; }
-}
-
-@keyframes glowing {
-  0% { background-color: #0088ce; box-shadow: 0 0 3px #0088ce; }
-  50% { background-color: #56c8f5; box-shadow: 0 0 40px #56c8f5; }
-  100% { background-color: #0088ce; box-shadow: 0 0 3px #0088ce; }
-} */
 </style>
 
 <body id="page-top" >
     <!-- Navigation-->
-    <nav class="navbar navbar-expand-lg navbar-light  shadow-sm" id="mainNav" >
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm" id="mainNav" >
         <div class="container px-5">
             <a class="navbar-brand fw-bold" href="#page-top">
                 <!-- <img src="assets/iNeedComBd_logo.png" class="img-fluid" alt="Responsive image" style="max-width: 20%"> -->

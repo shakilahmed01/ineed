@@ -19,6 +19,7 @@ class CreateOffersTable extends Migration
             $table->string('store_location');
             $table->string('discount');
             $table->string('photo');
+            $table->SoftDeletes();
 
             $table->timestamps();
         });

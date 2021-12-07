@@ -24,6 +24,7 @@ class CreateUserRegistrationsTable extends Migration
             $table->string('account');
             $table->string('address');
             $table->string('photo');
+            $table->SoftDeletes();
             $table->timestamps();
         });
     }

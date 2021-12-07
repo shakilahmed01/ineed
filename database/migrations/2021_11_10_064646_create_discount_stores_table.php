@@ -20,6 +20,7 @@ class CreateDiscountStoresTable extends Migration
             $table->string('phone');
             $table->string('price');
             $table->string('photo');
+            $table->SoftDeletes();
             $table->timestamps();
         });
     }

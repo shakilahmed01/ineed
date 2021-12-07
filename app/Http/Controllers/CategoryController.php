@@ -12,7 +12,7 @@ class CategoryController extends Controller
 {
 
 
-  }
+
     // create
     function cat_create(Request $request)
     {

@@ -31,6 +31,7 @@ Route::post('post/user',[App\http\controllers\DashboardController::class, 'post_
 Route::get('user/edit/{id}',[App\Http\Controllers\DashboardController::class, 'user_edit'])->name('user_edit');
 Route::post('user/update',[App\Http\Controllers\DashboardController::class, 'user_update'])->name('user_update');
 Route::get('user/delete/{id}',[App\Http\Controllers\DashboardController::class, 'user_delete'])->name('user_delete');
+Route::get('user/restore/{id}',[App\Http\Controllers\DashboardController::class, 'user_restore'])->name('user_restore');
 
 //end admindashboard
 
@@ -67,6 +68,7 @@ Route::get('/grocery/view',[App\http\controllers\DashboardController::class, 'vi
 Route::get('grocery/store/edit/{id}',[App\Http\Controllers\DashboardController::class, 'grocery_edit'])->name('grocery_edit');
 Route::post('grocery/store/update',[App\Http\Controllers\DashboardController::class, 'grocery_update'])->name('grocery_update');
 Route::get('grocery/store/delete/{id}',[App\Http\Controllers\DashboardController::class, 'grocery_delete'])->name('grocery_delete');
+Route::get('grocery/store/restore/{id}',[App\Http\Controllers\DashboardController::class, 'grocery_restore'])->name('grocery_restore');
 
 //end Grocery_store
 
@@ -77,6 +79,8 @@ Route::get('/discount/view',[App\http\controllers\DashboardController::class, 'v
 Route::get('discount/store/edit/{id}',[App\Http\Controllers\DashboardController::class, 'dis_edit'])->name('dis_edit');
 Route::post('discount/store/update',[App\Http\Controllers\DashboardController::class, 'dis_update'])->name('dis_update');
 Route::get('discount/store/delete/{id}',[App\Http\Controllers\DashboardController::class, 'dis_delete'])->name('dis_delete');
+Route::get('discount/store/restore/{id}',[App\Http\Controllers\DashboardController::class, 'dis_restore'])->name('dis_restore');
+
 //end Discount_store
 
 //begin ExistUser
@@ -128,6 +132,7 @@ Route::post('/add/offer',[App\http\controllers\DashboardController::class, 'add_
 Route::get('/offer/edit/{id}',[App\Http\Controllers\DashboardController::class, 'offer_edit'])->name('offer_edit');
 Route::post('/offer/update',[App\Http\Controllers\DashboardController::class, 'offer_update'])->name('offer_update');
 Route::get('/offer/delete/{id}',[App\Http\Controllers\DashboardController::class, 'offer_delete'])->name('offer_delete');
+Route::get('/offer/restore/{id}',[App\Http\Controllers\DashboardController::class, 'offer_restore'])->name('offer_restore');
 
 //end offer
 

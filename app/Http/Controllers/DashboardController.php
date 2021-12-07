@@ -118,6 +118,11 @@ class DashboardController extends Controller
           $list=UserRegistration::findOrFail($id)->delete();
           return back();
         }
+
+        function user_restore($id){
+            UserRegistration::onlyTrashed()->findOrFail($id)->restore();
+            return back();
+          }
 //end UserRegistration
 
 //Ajax function
@@ -139,7 +144,8 @@ class DashboardController extends Controller
 
     function view_user(){
       $lists=UserRegistration::all();
-      return view('Dashboard.view_user',compact('lists'));
+      $trashed_user=UserRegistration::onlyTrashed()->get();
+      return view('Dashboard.view_user',compact('lists','trashed_user'));
     }
 
     function profile(){
@@ -188,7 +194,8 @@ class DashboardController extends Controller
     }
     function view_grocery(){
       $lists=Grocery_store::all();
-      return view('Dashboard.grocery_store.view_grocery_store',compact('lists'));
+      $trashed_grocery=Grocery_store::onlyTrashed()->get();
+      return view('Dashboard.grocery_store.view_grocery_store',compact('lists','trashed_grocery'));
     }
     function grocery_edit($id){
 
@@ -222,6 +229,11 @@ class DashboardController extends Controller
           return back();
         }
 
+        function grocery_restore($id){
+            Grocery_store::onlyTrashed()->findOrFail($id)->restore();
+            return back();
+          }
+
     function discount_store(){
       return view('Dashboard.discount_store.discount');
     }
@@ -251,9 +263,9 @@ class DashboardController extends Controller
     function view_discount_store(){
       $lists=Discount_store::all();
 
+      $trashed_dis=Discount_store::onlyTrashed()->get();
 
-
-      return view('Dashboard.discount_store.view_discount_store',compact('lists'));
+      return view('Dashboard.discount_store.view_discount_store',compact('lists','trashed_dis'));
     }
 
     function dis_edit($id){
@@ -287,6 +299,12 @@ class DashboardController extends Controller
           $list=Discount_store::findOrFail($id)->delete();
           return back();
         }
+
+        function dis_restore($id){
+            Discount_store::onlyTrashed()->findOrFail($id)->restore();
+            return back();
+          }
+
 //end store
 
 
@@ -431,7 +449,8 @@ class DashboardController extends Controller
 
         function view_offer_list(){
           $lists=Offers::all();
-          return view('Dashboard.offers.view_offer_list',compact('lists'));
+          $trashed_offers=Offers::onlyTrashed()->get();
+          return view('Dashboard.offers.view_offer_list',compact('lists','trashed_offers'));
         }
 
         function offer_edit($id){
@@ -464,6 +483,11 @@ class DashboardController extends Controller
 
         function offer_delete($id){
             $list=Offers::findOrFail($id)->delete();
+            return back();
+          }
+
+        function offer_restore($id){
+            Offers::onlyTrashed()->findOrFail($id)->restore();
             return back();
           }
 //end offer
