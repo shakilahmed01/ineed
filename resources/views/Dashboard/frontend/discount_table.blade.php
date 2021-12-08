@@ -173,6 +173,7 @@ hr {
                         <div class="container mb-3 mt-1">
                             <table class="table table-striped table-bordered mydatatable" style="width: 100%; ">
                                 <thead>
+
                                     <tr>
                                         <th>Date</th>
                                         <th>Card Number</th>
@@ -181,127 +182,27 @@ hr {
                                         <th>Discount</th>
                                         <th>Discount Price</th>
                                     </tr>
+
                                 </thead>
                                 <tbody>
+                                    @foreach($payments as $payment)
                                     <tr>
-                                        <td>01/01/2021</td>
-                                        <td>0000000000000000001</td>
-                                        <td>মেসার্স সৈয়দ স্টোর</td>
-                                        <td>1000</td>
-                                        <td>5%</td>
-                                        <td>950</td>
+                                        <td>{{$payment->created_at->diffForHumans()}}</td>
+                                        <td>{{$payment->relationBetweenSubCategory->subcategory_card_number}}</td>
+                                        <td>{{$payment->store_name}}</td>
+                                        <td>{{$payment->price}}</td>
+                                        <td>{{$payment->relationBetweenCategory->category_discount}}</td>
+                                        <td>{{$payment->discount_price}}</td>
                                     </tr>
-                                    <tr>
-                                        <td>01/01/2021</td>
-                                        <td>0000000000000000002</td>
-                                        <td>মেসার্স সৈয়দ স্টোর</td>
-                                        <td>1000</td>
-                                        <td>5%</td>
-                                        <td>950</td>
-                                    </tr>
-                                    <tr>
-                                        <td>01/01/2021</td>
-                                        <td>0000000000000000003</td>
-                                        <td>মেসার্স সৈয়দ স্টোর</td>
-                                        <td>1000</td>
-                                        <td>5%</td>
-                                        <td>950</td>
-                                    </tr>
-                                    <tr>
-                                        <td>01/01/2021</td>
-                                        <td>0000000000000000004</td>
-                                        <td>মেসার্স সৈয়দ স্টোর</td>
-                                        <td>1000</td>
-                                        <td>5%</td>
-                                        <td>950</td>
-                                    </tr>
-                                    <tr>
-                                        <td>01/01/2021</td>
-                                        <td>0000000000000000005</td>
-                                        <td>মেসার্স সৈয়দ স্টোর</td>
-                                        <td>1000</td>
-                                        <td>5%</td>
-                                        <td>950</td>
-                                    </tr>
-                                    <tr>
-                                        <td>01/01/2021</td>
-                                        <td>0000000000000000006</td>
-                                        <td>মেসার্স সৈয়দ স্টোর</td>
-                                        <td>1000</td>
-                                        <td>5%</td>
-                                        <td>950</td>
-                                    </tr>
-                                    <tr>
-                                        <td>01/01/2021</td>
-                                        <td>0000000000000000007</td>
-                                        <td>মেসার্স সৈয়দ স্টোর</td>
-                                        <td>1000</td>
-                                        <td>5%</td>
-                                        <td>950</td>
-                                    </tr>
-                                    <tr>
-                                        <td>01/01/2021</td>
-                                        <td>0000000000000000008</td>
-                                        <td>মেসার্স সৈয়দ স্টোর</td>
-                                        <td>1000</td>
-                                        <td>5%</td>
-                                        <td>950</td>
-                                    </tr>
-                                    <tr>
-                                        <td>01/01/2021</td>
-                                        <td>0000000000000000009</td>
-                                        <td>মেসার্স সৈয়দ স্টোর</td>
-                                        <td>1000</td>
-                                        <td>5%</td>
-                                        <td>950</td>
-                                    </tr>
-                                    <tr>
-                                        <td>01/01/2021</td>
-                                        <td>0000000000000000010</td>
-                                        <td>মেসার্স সৈয়দ স্টোর</td>
-                                        <td>1000</td>
-                                        <td>5%</td>
-                                        <td>950</td>
-                                    </tr>
-                                    <tr>
-                                        <td>01/01/2021</td>
-                                        <td>0000000000000000011</td>
-                                        <td>মেসার্স সৈয়দ স্টোর</td>
-                                        <td>1000</td>
-                                        <td>5%</td>
-                                        <td>950</td>
-                                    </tr>
-                                    <tr>
-                                        <td>01/01/2021</td>
-                                        <td>0000000000000000012 </td>
-                                        <td>মেসার্স সৈয়দ স্টোর</td>
-                                        <td>1000</td>
-                                        <td>5%</td>
-                                        <td>950</td>
-                                    </tr>
-                                    <tr>
-                                        <td>01/01/2021</td>
-                                        <td>0000000000000000013</td>
-                                        <td>মেসার্স সৈয়দ স্টোর</td>
-                                        <td>1000</td>
-                                        <td>5%</td>
-                                        <td>950</td>
-                                    </tr>
-                                    <tr>
-                                        <td>01/01/2021</td>
-                                        <td>0000000000000000014</td>
-                                        <td>মেসার্স সৈয়দ স্টোর</td>
-                                        <td>1000</td>
-                                        <td>5%</td>
-                                        <td>950</td>
-                                    </tr>
+                                      @endforeach
+
 
                                 </tbody>
                                <tfoot>
                                 <tr>
                                     <!-- <th id="total" colspan="5" class="text-end">Total Purchase Amount:</th> -->
                                     <td id="total" colspan="5" class="text-start"> </td>
-                                    <td id="total"   class="text-start">200</td>
+                                    <td id="total"   class="text-start"></td>
                                   </tr>
                                </tfoot>
                             </table>

@@ -212,6 +212,18 @@ hr {
 
      </div>
 
+     <div class="form-group col-md-4">
+       <label for="price">Discount</label>
+       <input type="text" name="discount" class="form-control" id="discount"  placeholder="Discount">
+
+     </div>
+
+     <div class="form-group col-md-4">
+       <label for="price">Discount Price</label>
+       <input type="text" name="discount_price" class="form-control" id="discount_price"  placeholder="Discount price">
+
+     </div>
+
 
         <div class="form-group">
             <div class="checkbox">
@@ -225,6 +237,17 @@ hr {
 
 </body>
 </section>
+
+<script>
+       $(document).on("change keyup blur", "#discount", function() {
+           var main = $('#price').val();
+           var disc = $('#discount').val();
+           var dec = (disc / 100).toFixed(2); //its convert 10 into 0.10
+           var mult = main * dec; // gives the value for subtract from main value
+           var discont = main - mult;
+           $('#discount_price').val(discont);
+       });
+   </script>
 
 <script>
     $(document).ready(function(){

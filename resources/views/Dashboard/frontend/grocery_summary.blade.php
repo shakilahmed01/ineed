@@ -208,7 +208,7 @@
           </tr> -->
           @foreach($payments as $payment)
           <tr>
-            <th>{{$payment->created_at}}</th>
+            <th>{{$payment->created_at->diffForHumans()}}</th>
             <th>{{$payment->created_at}}</th>
             <th>{{$payment->store_name}}</th>
             <th>{{$payment->price}}</th>
@@ -218,116 +218,7 @@
             </th>
           </tr>
           @endforeach
-          <tr>
-            <th>March</th>
-            <th>01/03/2021</th>
-            <th>শেফা হামদর্দ এন্ড ইউনানী দাওয়াখানা</th>
-            <th>833.00</th>
-            <th>
-              <span class="badge badge-success">Delivered</span>
-                </div>
-            </th>
-          </tr>
-          <tr>
-            <th>April</th>
-            <th>01/04/2021</th>
-            <th>মোহনলাল মিষ্টান্ন ভান্ডার</th>
-            <th>833.00</th>
-            <th>
-              <span class="badge badge-primary">Processing</span>
-                </div>
-            </th>
-          </tr>
-          <tr>
-            <th>April</th>
-            <th>01/04/2021</th>
-            <th>বাচ্চু মোরগপোলাও এন্ড তেহেরী ঘর</th>
-            <th>833.00</th>
-            <th>
-              <span class="badge badge-dark">Shipped</span>
-                </div>
-            </th>
-          </tr>
-          <tr>
-            <th>May</th>
-            <th>01/05/2021</th>
-            <th>হাজি নূরউদ্দিন কাবলি স্টোর</th>
-            <th>833.00</th>
-            <th>
-              <span class="badge badge-success">Delivered</span>
-                </div>
-            </th>
-          </tr>
-          <tr>
-            <th>June</th>
-            <th>01/06/2021</th>
-            <th>মডার্ন কাবাব সেন্টার</th>
-            <th>833.00</th>
-            <th>
-              <span class="badge badge-primary">Processing</span>
-                </div>
-            </th>
-          </tr>
-          <tr>
-            <th>July</th>
-            <th>01/07/2021</th>
-            <th>পান্নালাল মার্বেল হাউজ</th>
-            <th>833.00</th>
-            <th>
-              <span class="badge badge-dark">Shipped</span>
-                </div>
-            </th>
-          </tr>
-          <tr>
-            <th>August</th>
-            <th>01/08/2021</th>
-            <th>আলমগীর বিউটি এন্ড কসমেটিক্স ষ্টোর</th>
-            <th>833.00</th>
-            <th>
-              <span class="badge badge-success">Delivered</span>
-                </div>
-            </th>
-          </tr>
-          <tr>
-            <th>September</th>
-            <th>01/09/2021</th>
-            <th>পান্নালাল মার্বেল হাউজ</th>
-            <th>833.00</th>
-            <th>
-              <span class="badge badge-primary">Processing</span>
-                </div>
-            </th>
-          </tr>
-          <tr>
-            <th>October</th>
-            <th>01/10/2021</th>
-            <th>হেলাল ক্যাটারিং সার্ভিস</th>
-            <th>833.00</th>
-            <th>
-              <span class="badge badge-dark">Shipped</span>
-                </div>
-            </th>
-          </tr>
-          <tr>
-            <th>November</th>
-            <th>01/11/2021</th>
-            <th>অশোক ক্রোকারিজ</th>
-            <th>833.00</th>
-            <th>
-              <span class="badge badge-success">Delivered</span>
-                </div>
-            </th>
-          </tr>
-          <tr>
-            <th>December</th>
-            <th>01/12/2021</th>
-            <th>ঘোষ এন্ড সন্স</th>
-            <th>833.00</th>
-            <th>
-              <span class="badge badge-primary">Processing</span>
-                </div>
-            </th>
-          </tr>
+
         </tbody>
       </table>
     </div>

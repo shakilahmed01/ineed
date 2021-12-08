@@ -14,7 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('Dashboard.admin.admin_login');
+  return view('Dashboard.frontend.index');
+    // return view('Dashboard.admin.admin_login');
 });
 Route::get('/admin/register', [App\Http\Controllers\FrontendController::class, 'register_view'])->name('register_view');
 Route::get('/admin/login', [App\Http\Controllers\FrontendController::class, 'login_view'])->name('login_view');
@@ -143,3 +144,17 @@ Route::get('/offer/restore/{id}',[App\Http\Controllers\DashboardController::clas
 Route::get('qr_code/generator',[App\http\controllers\FrontendController::class, 'qrcode_view'])->name('qrcode_view');
 
 //end Qr Code generator
+
+
+
+//otp login
+Route::post('login', 'UserController@login')->name('newlogin');
+
+Route::post('loginWithOtp', 'UserController@loginWithOtp')->name('loginWithOtp');
+Route::get('loginWithOtp', function () {
+    return view('auth/OtpLogin');
+})->name('loginWithOtp');
+
+Route::post('sendOtp', 'UserController@sendOtp');
+Route::post('newregister', 'UserController@register')->name('newregister');
+//end otp login

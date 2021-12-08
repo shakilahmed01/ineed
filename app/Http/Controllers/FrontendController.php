@@ -80,7 +80,9 @@ class FrontendController extends Controller
 
     function discount_table(){
       $store=Discount_store::all();
-      return view('Dashboard.frontend.discount_table',compact('store'));
+      $payments=Payments::where('name', Auth::user()->id)->get();
+      // $discount_price=Payments::where('price*category_discount%')->get();
+      return view('Dashboard.frontend.discount_table',compact('store','payments'));
     }
 
     function notification_view(){

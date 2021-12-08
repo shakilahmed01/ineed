@@ -16,6 +16,8 @@ class Payments extends Model
       'store_location',
       'phone',
       'price',
+      'discount',
+      'discount_price',
 
     ];
 
@@ -34,4 +36,6 @@ class Payments extends Model
     {
     return $this->hasOne('App\Models\SubCategory','id','card_number');
     }
+
+
 }

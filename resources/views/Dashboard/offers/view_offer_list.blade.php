@@ -36,8 +36,6 @@
 </body>
 </section>
 
-<hr>
-<hr>
 
 
 <body class="theme-blush">
@@ -66,8 +64,8 @@
       <img src="{{ asset('uploads/offers') }}/{{ $trashed_offer->photo }}" alt="">
       </td>
       <td>
-        <a href="{{ url('/offer/restore/') }}/{{ $trashed_offer->id }}" class=" btn-sm btn-primary">Restore</a>
-        
+        <a href="{{ url('/offer/restore/') }}/{{ $trashed_offer->id }}" class=" btn-sm btn-success">Restore</a>
+
       </td>
     </tr>
 @endforeach

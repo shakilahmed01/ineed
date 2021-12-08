@@ -22,6 +22,8 @@ class CreatePaymentsTable extends Migration
             $table->string('store_location');
             $table->string('phone');
             $table->string('price');
+            $table->string('discount');
+            $table->string('discount_price');
             $table->timestamps();
         });
     }

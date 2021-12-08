@@ -338,6 +338,8 @@ class DashboardController extends Controller
          'store_location'=>$request->store_location,
          'phone'=>$request->phone,
          'price'=>$request->price,
+         'discount'=>$request->discount,
+         'discount_price'=>$request->discount_price,
          'created_at'   =>Carbon::now()
        ]);
        return back();
