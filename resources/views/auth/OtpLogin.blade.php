@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -64,7 +65,7 @@
                 }
             });
 
-            // alert($('#mobile').val());
+          alert($('#mobile').val());
             $.ajax( {
                 url:'sendOtp',
                 type:'post',
@@ -85,4 +86,5 @@
             });
         }
     </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 @endsection

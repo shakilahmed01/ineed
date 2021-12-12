@@ -24,7 +24,7 @@
               <div class="alert alert-success">
               {{Session::get('message')}}</div>
               @endif
-                <form class="card auth_form" method="POST" action="{{ route('login') }}">
+                <form class="card auth_form" method="POST" action="{{ route('newlogin') }}">
                   @csrf
                     <div class="header">
                         <img class="logo" src="{{asset('Dashboard/assets/images/admin logo.png')}}" alt="">
@@ -32,10 +32,10 @@
                     </div>
                     <div class="body">
                         <div class="input-group mb-3">
-                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="Email">
+                            <input id="mobile" type="mobile" class="form-control @error('mobile') is-invalid @enderror" name="mobile" value="{{ old('mobile') }}" placeholder="mobile">
                             <div class="input-group-append">
                                 <span class="input-group-text"><i class="zmdi zmdi-account-circle"></i></span>
-                                @error('email')
+                                @error('mobile')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -63,8 +63,8 @@
                         @endif
 
                         @if (Route::has('password.request'))
-                            <a class="btn btn-link" href="{{ route('password.request') }}">
-                                {{ __('Forgot Your Password?') }}
+                            <a class="btn btn-link" href="{{ route('loginWithOtp') }}">
+                                login With Otp
                             </a>
                         @endif
 

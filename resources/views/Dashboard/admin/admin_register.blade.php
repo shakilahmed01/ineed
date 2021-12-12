@@ -20,7 +20,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-4 col-sm-12">
-                <form class="card auth_form" method="POST" action="{{ route('register') }}">
+                <form class="card auth_form" method="POST" action="{{ route('newregister') }}">
                   @csrf
                     <div class="header">
                         <img class="logo" src="{{asset('Dashboard/assets/images/admin logo.png')}}" alt="">
@@ -35,10 +35,10 @@
                             </div>
                         </div>
                         <div class="input-group mb-3">
-                            <input id="email" type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="Enter Email">
+                            <input id="mobile" type="text" class="form-control @error('mobile') is-invalid @enderror" name="mobile" value="{{ old('mobile') }}" placeholder="Enter mobile number">
                             <div class="input-group-append">
-                                <span class="input-group-text"><i class="zmdi zmdi-email"></i></span>
-                                @error('email')
+                                <span class="input-group-text"><i class="zmdi zmdi-mobile"></i></span>
+                                @error('mobile')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

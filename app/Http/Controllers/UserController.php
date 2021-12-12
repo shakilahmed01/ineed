@@ -1,10 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\User;
+use App\Providers\RouteServiceProvider;
+use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Hash;
+use App\Models\User;
+use Carbon\Carbon;
+use Image;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
@@ -12,12 +16,34 @@ use Validator;
 
 class UserController extends Controller
 {
+
+  use RegistersUsers;
+
+
+    /**
+     * Where to redirect users after registration.
+     *
+     * @var string
+     */
+    protected $redirectTo = RouteServiceProvider::HOME;
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('guest');
+    }
+
     public $successStatus = 200;
 
-    public function login(Request $request){
+    public function login_new(Request $request){
         Log::info($request);
         if(Auth::attempt(['mobile' => request('mobile'), 'password' => request('password')])){
-            return view('home');
+          // return Redirect::index();
+          return Redirect::HOME();
         }
         else{
             return Redirect::back ();
@@ -30,7 +56,7 @@ class UserController extends Controller
         if( $user){
             Auth::login($user, true);
             User::where('mobile','=',$request->mobile)->update(['otp' => null]);
-            return view('home');
+            return Redirect::HOME();
         }
         else{
             return Redirect::back ();
@@ -53,7 +79,7 @@ class UserController extends Controller
         $input['password'] = bcrypt($input['password']);
         User::create($input);
 
-        return redirect('login');
+        return redirect('loginWithOtp');
     }
 
     public function sendOtp(Request $request){
@@ -63,5 +89,9 @@ class UserController extends Controller
         $user = User::where('mobile','=',$request->mobile)->update(['otp' => $otp]);
         // send otp to mobile no using sms api
         return response()->json([$user],200);
+    }
+
+    function indexotp(){
+      return view('auth.OtpLogin');
     }
 }

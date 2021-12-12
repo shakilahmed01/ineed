@@ -148,13 +148,12 @@ Route::get('qr_code/generator',[App\http\controllers\FrontendController::class, 
 
 
 //otp login
-Route::post('login', 'UserController@login')->name('newlogin');
+Route::post('login_new',  [App\http\controllers\UserController::class,'login_new'])->name('newlogin');
 
-Route::post('loginWithOtp', 'UserController@loginWithOtp')->name('loginWithOtp');
-Route::get('loginWithOtp', function () {
-    return view('auth/OtpLogin');
-})->name('loginWithOtp');
+Route::post('loginWithOtp', [App\http\controllers\UserController::class,'loginWithOtp'])->name('loginWithOtp');
+Route::get('loginWithOtp', [App\http\controllers\UserController::class,'indexotp'])->name('loginotp');
 
-Route::post('sendOtp', 'UserController@sendOtp');
-Route::post('newregister', 'UserController@register')->name('newregister');
+
+Route::post('sendOtp', [App\http\controllers\UserController::class, 'sendOtp']);
+Route::post('newregister', [App\http\controllers\UserController::class, 'register'])->name('newregister');
 //end otp login
